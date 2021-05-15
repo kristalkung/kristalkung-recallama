@@ -1,14 +1,26 @@
-{% extends 'root.html' %}
+{% extends 'base.html' %}
 
 {% block title %} Welcome {% endblock %}
 
 {% block body %}
-  <!-- Mount your react components on to this element. -->
-  <div id="app"></div>
+
+<h3> Search for Recalls:</h3>
+
+<div>
+  <form id='search-form' action='/search' method="POST">
+    
+    Food Description <input type='text' name='description'>
+    <br/>
+    Status <input type='text' name='status'>
+    <br/>
+    Recalling Firm <input type='text' name='recalling-firm'>
+    <br/>
+    Reason for Recall <input type='text' name='reason-for-recall'>
+    <br/>
+    <button type="submit"> Submit </button>
+  </form>
+</div>
+
 {% endblock %}
 
-{% block js %}
-	<script src="/static/js/search.jsx" type="text/jsx"></script>
-
-  { data }
-{% endblock %}
+{% block js %}{% endblock %}

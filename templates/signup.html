@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
-
-{% block title %} Welcome {% endblock %}
-
+{% block title %} Recallama {% endblock %}
 {% block body %}
-
-  <h1> Welcome to Recallama! </h1>
-
   <h2>Sign up for a Recallama account</h2>
 
   <div id="signup-form">
-    <form action='/signup' methods="POST">
+    <form action='/signup' method="POST">
       <p>
         First name <input id='fname' type='text' name='fname' required=True> 
       </p>
       <p>
-        Last name <input id='lname' type='password' name='lname' required=True> 
+        Last name <input id='lname' type='text' name='lname' required=True> 
       </p>
       <p>
         Email <input id='email' type='text' name='email' required=True> 
@@ -29,9 +24,6 @@
   </br> 
   <a href='/login'>Already have an account? Click here to Login</a>
 
-  <!-- Mount your react components on to this element. 
-  <div id="welcome"></div>
-  <div id="app"></div> -->
 {% endblock %}
 
 {% block js %}

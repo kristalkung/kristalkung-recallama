@@ -1,6 +1,5 @@
 "use strict";
 
-
 function SignUp() {
 
   let history = useHistory();
@@ -44,8 +43,6 @@ function SignUp() {
       
     })
 		
-    // TODO: figure out how to let the user know on the webpage the error of a taken email
-    // TODO: figure out a new user.
 	}
 
   function handleFNameChange(evt) {

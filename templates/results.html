@@ -1,16 +1,59 @@
-{% extends 'root.html' %}
+{% extends 'base.html' %}
 
 {% block title %} {% endblock %}
 
 {% block body %}
-  <script src="/static/js/components/results.jsx" type="text/jsx"></script>
 
-  <div id="app"></div>
-  <div>results page</div>
+<div>
+  <h3> Search for Recalls:</h3>
+  <form id='search-form' action='/search' method="POST">
+    
+    Food Description <input type='text' name='description'>
+    <br/>
+    Status <input type='text' name='status'>
+    <br/>
+    Recalling Firm <input type='text' name='recalling-firm'>
+    <br/>
+    Reason for Recall <input type='text' name='reason-for-recall'>
+    <br/>
+    <button type="submit"> Submit </button>
+  </form>
+</div>
+<br/>
+<div>
+  <h2>Search Results</h2>
+  {% for result in results%}
+    <form id='result-item' name='{result}'> 
+      <p> Recalling Firm: <b>{{ result.recalling_firm }}</b> </p>
+      <p> Production Description: {{ result.product_description }} </p>
+      <p> Reason for Recall: {{ result.reason_for_recall }} </p>
+      <p> Recall Initiation Date: {{ result.recall_initiation_date }} </p>
+      <button id='saveToProfile' class='saveText'>Save</button>
+    </form>
+  {% endfor%}
+</div>
+
+
+
+<script>
+  console.log("hi script is working")
+  "use strict";
+  const saveButton = document.querySelector('#saveToProfile');
+
+  saveButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    if (document.querySelector('#safeToProfile').innerHTML === 'Save') {
+      document.querySelector('.saveText').innerHTML = 'Unsave';
+    }
+    else if (document.querySelector('#safeToProfile').innerHTML === 'Unsave') {
+      document.querySelector('.saveText').innerHTML = 'Save';
+    }
+  })
+</script>
+
 
 {% endblock %}
 
 {% block js %}
-  <div> results page </div>
 
 {% endblock %}

@@ -18,6 +18,100 @@ app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['OPENFDA_KEY']
 
+# @app.route('/')
+# def homepage():
+#     return render_template('homepage.html')
+
+# @app.route('/login')
+# def show_login():
+
+#     if session['user']:
+#         flash('You are already logged in')
+#         return redirect('/search')
+
+#     return render_template('login.html')
+
+# @app.route('/login', methods=['POST'])
+# def login_user():
+
+#     input_email = request.form.get('email')
+#     input_password = request.form.get('password')
+
+#     user = crud.get_user_by_email(input_email)
+
+#     if user and user.password == input_password:
+#         session['user'] = user.user_id
+#         return redirect('/search')
+#     else:
+#         flash('incorrect login')
+#         return redirect('/login')
+
+
+# @app.route('/signup')
+# def show_signup_form():
+    
+#     return render_template('signup.html')
+
+# @app.route('/signup', methods=["POST"])
+# def signup():
+#     fname = request.form.get('fname')
+#     lname = request.form.get('lname')
+#     email = request.form.get('email')
+#     password = request.form.get('password')
+
+#     if email in crud.get_all_emails():
+#         flash('An account has already been made with this email. Try again')
+#         return redirect('/signup')
+
+#     else:
+#         crud.create_user(fname, lname, email, password)
+#         flash('Your account has been created. Please log in.')
+#         return redirect('/login')
+
+# @app.route('/search')
+# def show_search():
+#     return render_template('search.html')
+
+# @app.route('/search', methods=["POST"])
+# def show_results():
+#     payload = {
+#         'api_key': API_KEY,
+#         'limit': 5
+#     }
+#     product_description = request.form.get("description")
+#     status = request.form.get("status")
+#     reason_for_recall = request.form.get("reason-for-recall")
+#     recalling_firm = request.form.get("recalling-firm")
+
+#     search_terms = []
+
+#     if product_description:
+#         search_terms.append(f'product_description:"{product_description}"')
+#     if status:
+#         search_terms.append(f'status:"{status}"')
+#     if reason_for_recall:
+#         search_terms.append(f'reason_for_recall:"{reason_for_recall}"')
+#     if recalling_firm:
+#         search_terms.append(f'recalling_firm:"{recalling_firm}"')
+    
+#     if search_terms:
+#         payload['search'] = '+AND+'.join(search_terms)
+    
+#     url = 'https://api.fda.gov/food/enforcement.json'
+
+#     data = requests.get(url, params=payload).json()
+
+#     if data.get('error'):
+#         return data
+
+#     data_list = data['results']
+
+#     return render_template('results.html', results=data_list)
+
+
+##########
+
+
 @app.route('/profile')
 @app.route('/results')
 @app.route('/signup')
@@ -65,14 +159,17 @@ def signup():
 
 @app.route('/api/results', methods=["POST"])
 def search():
+
     payload = {
         'api_key': API_KEY,
         'limit': 5
     }
-    product_description = request.form.get("description")
-    status = request.form.get("status")
-    reason_for_recall = request.form.get("reason-for-recall")
-    recalling_firm = request.form.get("recalling-firm")
+    product_description = request.json.get("description")
+    status = request.json.get("status")
+    reason_for_recall = request.json.get("reason-for-recall")
+    recalling_firm = request.json.get("recalling-firm")
+    # TODO: request.form.get is returning None.
+    
 
     search_terms = []
 
@@ -88,7 +185,8 @@ def search():
     if search_terms:
         payload['search'] = '+AND+'.join(search_terms)
 
-    print(payload)
+    print(search_terms)
+    print(f'payload is: {payload}')
 
     # url = 'https://api.fda.gov/food/enforcement.json?search=status=Terminated&limit=5'
     # url = 'https://api.fda.gov/food/enforcement.json?search=status:"Terminated"+AND+recalling_firm:"Harry"&limit=5'
@@ -107,8 +205,6 @@ def search():
 
     return jsonify(data_list)
 
-
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
-
