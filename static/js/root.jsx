@@ -28,7 +28,7 @@ function App() {
 						<Link to='/signup'>Sign up</Link>
 						</li>
 						<li>
-						{/* <Link to='/search'>Search</Link> */}
+						<Link to='/search'>Search</Link>
 						</li>
 						<li>
 						<Link to='/login'>Login</Link>
@@ -50,9 +50,9 @@ function App() {
 					</Route>
           <Route path='/profile'>
 						<ViewProfile />
-					{/* </Route>
+					</Route>
 					<Route path='/search'>
-						<Search /> */}
+						<Search />
 					</Route>
 					<Route path='/'>
 						<Homepage />

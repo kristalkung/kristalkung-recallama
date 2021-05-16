@@ -164,12 +164,18 @@ def search():
         'api_key': API_KEY,
         'limit': 5
     }
+
+    print(request.json)
+    print(request.get_json())
+
     product_description = request.json.get("description")
     status = request.json.get("status")
-    reason_for_recall = request.json.get("reason-for-recall")
-    recalling_firm = request.json.get("recalling-firm")
-    # TODO: request.form.get is returning None.
+    reason_for_recall = request.json.get("reasonForRecall")
+    recalling_firm = request.json.get("recallingFirm")
+    # TODO: request.form.get is returning None. 
     
+    print(f'reason: {reason_for_recall}')
+       
 
     search_terms = []
 
@@ -198,12 +204,17 @@ def search():
 
     data = requests.get(url, params=payload).json()
 
+    result = {}
+
     if data.get('error'):
-        return data
+        result['results'] = None
+        result['error'] = data['error']
+    else:
+        result['results'] = data['results']
+        result['error'] = None
 
-    data_list = data['results']
-
-    return jsonify(data_list)
+    return jsonify(result)
+    
 
 if __name__ == '__main__':
     connect_to_db(app)

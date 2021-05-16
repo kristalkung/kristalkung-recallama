@@ -5,9 +5,8 @@ function WelcomeUser() {
   else  return <h2> Welcome!</h2>
 }
 
-
 function PostResult(props) {
-  const [postResultData, setPostResultData] = React.useState(["loading..."])
+  const [postResultData, setPostResultData] = React.useState(null)
   
   React.useEffect(() => {
     if (props.search) {
@@ -15,7 +14,7 @@ function PostResult(props) {
         description: props.description,
         status: props.status,
         reasonForRecall: props.reasonForRecall,
-        recallingFirm: props.recallingFirm
+        recallingFirm: props.recallingFirm,
       };
       const options = {
         method: 'POST',
@@ -30,31 +29,44 @@ function PostResult(props) {
         return res.json();
       })
       .then(data => {
+        console.log(data)
         setPostResultData(data);
       })
       .catch(err => {
         console.log(`search failed due to ${err}`);
       });
+      props.setSearch(false);
     }
-    props.setSearch(!props.search);
+    
   }, [props.search])
 
+  if (postResultData === null) {
+    return <div></div>;
+  }
 
-  return (
-    <div className='resultIndex'>
-      {postResultData.map((result, index) => (
-        <div key={index}>
-          <h3> {result.recalling_firm}</h3>
-          <p>Report Date: {result.report_date}</p>
-          <p>Description: {result.product_description}</p>
-          <p>Distribution pattern: {result.distribution_pattern}</p>
-          <p>Status: {result.status}</p>
-          <button type='submit'>Save to Profile</button>
-        </div>
-        
-      ))}
+  const wasThereAnError = postResultData['error'] !== null;
+
+  if (wasThereAnError) {
+    return <div className='resultIndex'>
+      {postResultData['error']['message']}
     </div>
-  )
+  } else {
+    return (
+      <div className='resultIndex'>
+        {postResultData['results'].map((result, index) => (
+          <div key={index}>
+            <h3> {result.recalling_firm}</h3>
+            <p>Report Date: {result.report_date}</p>
+            <p>Description: {result.product_description}</p>
+            <p>Distribution pattern: {result.distribution_pattern}</p>
+            <p>Reason for recall: {result.reason_for_recall}</p>
+            <p>Status: {result.status}</p>
+            <button type='submit'>Save to Profile</button>
+          </div>))
+        }
+      </div>
+    )
+  }
 }
 
 function SearchBar(props) {
@@ -96,7 +108,7 @@ function SearchBar(props) {
 	return (
     <div>
       <div className='search-bar-container'>
-        <form action='/api/results' onSubmit={(evt) => {handleSubmit(evt, resultsList)}} method="POST">
+        <form action='/api/results' onSubmit={(evt) => {handleSubmit(evt)}} method="POST">
           Food Description
           <input value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
           <br/>
