@@ -26,9 +26,8 @@ class Food(db.Model):
     __tablename__ = 'foods'
 
     food_id = db.Column(db.Integer,
-                        autoincrement=True,
                         primary_key=True,
-                        nullable=False)
+                        autoincrement=True)
     recall_number = db.Column(db.String, nullable=False)
     product_description = db.Column(db.String, nullable=False)
     code_info = db.Column(db.String, nullable=False)

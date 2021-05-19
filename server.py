@@ -158,23 +158,20 @@ def signup():
 
 
 @app.route('/api/results', methods=["POST"])
-def search():
+def search_results():
 
     payload = {
         'api_key': API_KEY,
         'limit': 5
     }
 
-    print(request.json)
-    print(request.get_json())
+    # print(request.json)
+    # print(request.get_json())
 
     product_description = request.json.get("description")
     status = request.json.get("status")
     reason_for_recall = request.json.get("reasonForRecall")
-    recalling_firm = request.json.get("recallingFirm")
-    # TODO: request.form.get is returning None. 
-    
-    print(f'reason: {reason_for_recall}')
+    recalling_firm = request.json.get("recallingFirm")    
        
 
     search_terms = []
@@ -191,8 +188,8 @@ def search():
     if search_terms:
         payload['search'] = '+AND+'.join(search_terms)
 
-    print(search_terms)
-    print(f'payload is: {payload}')
+    # print(search_terms)
+    # print(f'payload is: {payload}')
 
     # url = 'https://api.fda.gov/food/enforcement.json?search=status=Terminated&limit=5'
     # url = 'https://api.fda.gov/food/enforcement.json?search=status:"Terminated"+AND+recalling_firm:"Harry"&limit=5'
@@ -213,8 +210,37 @@ def search():
         result['results'] = data['results']
         result['error'] = None
 
+        # add the search results to the DB
+
+        recall_list = data['results']
+
+        for recall in recall_list:
+
+            input_recall_number = recall['recall_number']
+            is_in_db = crud.get_food_recall_by_recall_number(input_recall_number)
+
+            if (not is_in_db) and (input_recall_number != is_in_db.recall_number):
+                recall_number = recall['recall_number'], 
+                product_description = recall['product_description'], 
+                code_info = recall['code_info'], 
+                recalling_firm = recall['recalling_firm'], 
+                reason_for_recall = recall['reason_for_recall'], 
+                recall_initiation_date = recall['recall_initiation_date'], 
+                status = recall['status']
+
+                crud.create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status)
+
     return jsonify(result)
+
+@app.route('/api/<food_id>')
+def view_food_recall_info(food_id):
+    """View an individual food recall's information."""
+
+    food_recall = crud.get_food_recall_by_id(food_id)
+
+    return jsonify(food_recall)
     
+
 
 if __name__ == '__main__':
     connect_to_db(app)

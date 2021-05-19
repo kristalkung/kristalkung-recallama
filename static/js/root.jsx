@@ -48,7 +48,7 @@ function App() {
 					<Route path='/login'>
 						<LogIn />
 					</Route>
-          <Route path='/profile'>
+          			<Route path='/profile'>
 						<ViewProfile />
 					</Route>
 					<Route path='/search'>

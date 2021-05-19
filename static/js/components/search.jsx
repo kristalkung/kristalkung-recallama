@@ -61,7 +61,7 @@ function PostResult(props) {
             <p>Distribution pattern: {result.distribution_pattern}</p>
             <p>Reason for recall: {result.reason_for_recall}</p>
             <p>Status: {result.status}</p>
-            <button type='submit'>Save to Profile</button>
+            <a href='/api/<food_id>'>View Details</a>
           </div>))
         }
       </div>
