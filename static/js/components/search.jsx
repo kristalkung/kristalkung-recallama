@@ -28,7 +28,7 @@ function PostResult(props) {
         return res.json();
       })
       .then(data => {
-        // console.log(data)
+        console.log(data)
         setPostResultData(data);
       })
       .catch(err => {

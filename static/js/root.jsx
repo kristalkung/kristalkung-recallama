@@ -9,6 +9,7 @@ const Prompt = ReactRouterDOM.Prompt;
 const Switch = ReactRouterDOM.Switch;
 const Redirect = ReactRouterDOM.Redirect;
 const useHistory = ReactRouterDOM.useHistory;
+const useParams = ReactRouterDOM.useParams;
 
 // const { Router, Route, Link, Prompt, Switch, Redirect } = ReactRouterDOM;
 
@@ -46,7 +47,7 @@ function App() {
 					<Route path='/login'> <LogIn /> </Route>
           <Route path='/profile'> <ViewProfile /> </Route>
 					<Route path='/search'> <Search /> </Route>
-					<Route path='/food/'> <Results /> </Route>
+					<Route path='/food/:food_id'> <Results /> </Route>
 					<Route path='/'> <Homepage /> </Route>
 
 				</Switch>
