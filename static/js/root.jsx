@@ -42,24 +42,12 @@ function App() {
 		
 				{/* this is how you switch between two components */}
 				<Switch>
-					<Route path='/signup'>
-						<SignUp />
-					</Route>
-					<Route path='/login'>
-						<LogIn />
-					</Route>
-          			<Route path='/profile'>
-						<ViewProfile />
-					</Route>
-					<Route path='/search'>
-						<Search />
-					</Route>
-					<Route path='/api/{recall_number}'>
-						<Results />
-					</Route>
-					<Route path='/'>
-						<Homepage />
-					</Route>
+					<Route path='/signup'> <SignUp /> </Route>
+					<Route path='/login'> <LogIn /> </Route>
+          <Route path='/profile'> <ViewProfile /> </Route>
+					<Route path='/search'> <Search /> </Route>
+					<Route path='/food/{food_id}'> <Results /> </Route>
+					<Route path='/'> <Homepage /> </Route>
 
 				</Switch>
 			</div>

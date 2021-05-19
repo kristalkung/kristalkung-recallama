@@ -12,7 +12,6 @@ function PostResult(props) {
     if (props.search) {
       const data = {
         description: props.description,
-        status: props.status,
         reasonForRecall: props.reasonForRecall,
         recallingFirm: props.recallingFirm,
       };
@@ -62,7 +61,7 @@ function PostResult(props) {
             <p>Distribution pattern: {result.distribution_pattern}</p>
             <p>Reason for recall: {result.reason_for_recall}</p>
             <p>Status: {result.status}</p>
-            <a href={'/api/' + result.recall_number}>View Details</a>
+            <a href={'/food/' + result.food_id}>View Details</a>
             {console.log(result.recall_number)}
           </div>))
         }
@@ -74,7 +73,6 @@ function PostResult(props) {
 function SearchBar(props) {
 
   const [ description, setDescription ] = React.useState("")
-  const [ status, setStatus ] = React.useState("")
   const [ reasonForRecall, setReasonForRecall ] = React.useState("")
   const [ recallingFirm, setRecallingFirm ] = React.useState("")
   const [searched, setSearched] = React.useState(false);
@@ -84,7 +82,6 @@ function SearchBar(props) {
   
     const data = {
       description,
-      status,
       reasonForRecall,
       recallingFirm
     };
@@ -114,10 +111,6 @@ function SearchBar(props) {
           Food Description
           <input value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
           <br/>
-
-          Recall Termination Status
-          <input value={status} name="status" onChange={(e) => setStatus(e.target.value)} type='text'></input>
-          <br/>
           
           Reason for Recall 
           <input value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
@@ -131,7 +124,7 @@ function SearchBar(props) {
         </form>
       </div>
       <div className='post-result-container'>
-        <PostResult search={searched} setSearch={setSearched} description={description} status={status} reasonForRecall={reasonForRecall} recallingFirm={recallingFirm} />
+        <PostResult search={searched} setSearch={setSearched} description={description} reasonForRecall={reasonForRecall} recallingFirm={recallingFirm} />
       </div>
     </div>
 

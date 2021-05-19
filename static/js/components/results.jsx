@@ -1,4 +1,11 @@
 function Results() {
+  console.log("hello")
+
+  const [result, setResult] = React.useState({})
+
+  fetch('/api/food/{food_id}')
+  .then(response => response.json())
+  .then(data => setResult(data))
 
   return (
     <div className='individualRecall'>
@@ -12,3 +19,5 @@ function Results() {
       
   )
 }
+
+ReactDOM.render(<Results />, document.getElementById('root'))

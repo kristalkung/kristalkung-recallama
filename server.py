@@ -120,6 +120,7 @@ API_KEY = os.environ['OPENFDA_KEY']
 @app.route('/')
 def homepage():
     """view homepage"""
+    
     return render_template('root.html')
 
 @app.route('/api/login', methods=["POST"])
@@ -169,7 +170,6 @@ def search_results():
     # print(request.get_json())
 
     product_description = request.json.get("description")
-    status = request.json.get("status")
     reason_for_recall = request.json.get("reasonForRecall")
     recalling_firm = request.json.get("recallingFirm")    
        
@@ -178,8 +178,6 @@ def search_results():
 
     if product_description:
         search_terms.append(f'product_description:"{product_description}"')
-    if status:
-        search_terms.append(f'status:"{status}"')
     if reason_for_recall:
         search_terms.append(f'reason_for_recall:"{reason_for_recall}"')
     if recalling_firm:
@@ -207,38 +205,26 @@ def search_results():
         result['results'] = None
         result['error'] = data['error']
     else:
-        result['results'] = data['results']
-        result['error'] = None
-
-        # add the search results to the DB
-
         recall_list = data['results']
 
         for recall in recall_list:
-
             input_recall_number = recall['recall_number']
-            is_in_db = crud.get_food_recall_by_recall_number(input_recall_number)
+            recall_obj = crud.get_food_recall_by_recall_number(input_recall_number)
 
-            if (not is_in_db) and (input_recall_number != is_in_db.recall_number):
-                recall_number = recall['recall_number'], 
-                product_description = recall['product_description'], 
-                code_info = recall['code_info'], 
-                recalling_firm = recall['recalling_firm'], 
-                reason_for_recall = recall['reason_for_recall'], 
-                recall_initiation_date = recall['recall_initiation_date'], 
-                status = recall['status']
+            obj_id = recall_obj.food_id
 
-                food_recall = crud.create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status)
+            recall['food_id'] = obj_id
 
-                # try pasting lines 241 - 258 here. let's see if we can manually create dict for each added recall and return a list of added recall dicts
+        result['results'] = recall_list
+        result['error'] = None
 
     return jsonify(result)
 
-@app.route('/api/{recall_number}')
-def view_food_recall_info(recall_number):
+@app.route('/api/food/{food_id}')
+def view_food_recall_info(food_id):
     """View an individual food recall's information."""
 
-    food_recall = crud.get_food_recall_by_recall_number(recall_number)
+    food_recall = crud.get_food_recall_by_id(food_id)
     food_dict = {}
     
     recall_number = food_recall.recall_number, 
@@ -249,17 +235,25 @@ def view_food_recall_info(recall_number):
     recall_initiation_date = food_recall.recall_initiation_date, 
     status = food_recall.status
 
-    food_dict['recall_number'] = recall_number
-    food_dict['product_description'] = product_description
-    food_dict['code_info'] = code_info
-    food_dict['recalling_firm'] = recalling_firm
-    food_dict['reason_for_recall'] = reason_for_recall
-    food_dict['recall_initiation_date'] = recall_initiation_date
+    food_dict['recall_number'] = recall_number[0]
+    food_dict['product_description'] = product_description[0]
+    food_dict['code_info'] = code_info[0]
+    food_dict['recalling_firm'] = recalling_firm[0]
+    food_dict['reason_for_recall'] = reason_for_recall[0]
+    food_dict['recall_initiation_date'] = recall_initiation_date[0]
     food_dict['status'] = status
 
     return jsonify(food_dict)
-    
 
+    # return render_template('results.html', results=food_recall)
+    
+# @app.route('/users/<user_id>')
+# def user_details(user_id):
+#     """View user details."""
+
+#     user = crud.get_user_by_id(user_id)
+
+#     return render_template('user_details.html', user=user)
 
 if __name__ == '__main__':
     connect_to_db(app)
