@@ -54,6 +54,9 @@ function App() {
 					<Route path='/search'>
 						<Search />
 					</Route>
+					<Route path='/api/{recall_number}'>
+						<Results />
+					</Route>
 					<Route path='/'>
 						<Homepage />
 					</Route>

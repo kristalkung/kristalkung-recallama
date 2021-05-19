@@ -57,11 +57,13 @@ function PostResult(props) {
           <div key={index}>
             <h3> {result.recalling_firm}</h3>
             <p>Report Date: {result.report_date}</p>
+            <p>Recall Number: {result.recall_number}</p>
             <p>Description: {result.product_description}</p>
             <p>Distribution pattern: {result.distribution_pattern}</p>
             <p>Reason for recall: {result.reason_for_recall}</p>
             <p>Status: {result.status}</p>
-            <a href='/api/<food_id>'>View Details</a>
+            <a href={'/api/' + result.recall_number}>View Details</a>
+            {console.log(result.recall_number)}
           </div>))
         }
       </div>

@@ -67,10 +67,16 @@ def get_food_recall_by_id(food_id):
 
     return Food.query.get(food_id)
 
-def get_food_recall_by_recall_number(recall_number):
+def get_food_recall_by_recall_number(input_recall_number):
     """Returns food recall by recall number."""
 
-    return Food.query.get(recall_number)
+    return Food.query.filter(Food.recall_number == input_recall_number).first()
+
+def get_food_recall_by_event_id(input_event_id):
+    """Returns food recall by event_id."""
+
+    return Food.query.filter(Food.event_id == input_event_id).first()
+
 
 def get_food_recall_by_description(product_description):
     """Returns food recalls with given product description."""

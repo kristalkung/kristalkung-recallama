@@ -232,13 +232,30 @@ def search_results():
 
     return jsonify(result)
 
-@app.route('/api/<food_id>')
-def view_food_recall_info(food_id):
+@app.route('/api/{recall_number}')
+def view_food_recall_info(recall_number):
     """View an individual food recall's information."""
 
-    food_recall = crud.get_food_recall_by_id(food_id)
+    food_recall = crud.get_food_recall_by_recall_number(recall_number)
+    food_dict = {}
+    
+    recall_number = food_recall.recall_number, 
+    product_description = food_recall.product_description, 
+    code_info = food_recall.code_info, 
+    recalling_firm = food_recall.recalling_firm, 
+    reason_for_recall = food_recall.reason_for_recall, 
+    recall_initiation_date = food_recall.recall_initiation_date, 
+    status = food_recall.status
 
-    return jsonify(food_recall)
+    food_dict['recall_number'] = recall_number
+    food_dict['product_description'] = product_description
+    food_dict['code_info'] = code_info
+    food_dict['recalling_firm'] = recalling_firm
+    food_dict['reason_for_recall'] = reason_for_recall
+    food_dict['recall_initiation_date'] = recall_initiation_date
+    food_dict['status'] = status
+
+    return jsonify(food_dict)
     
 
 
