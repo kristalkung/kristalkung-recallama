@@ -220,7 +220,7 @@ def search_results():
 
     return jsonify(result)
 
-@app.route('/api/food/{food_id}')
+@app.route('/api/food/<food_id>')
 def view_food_recall_info(food_id):
     """View an individual food recall's information."""
 

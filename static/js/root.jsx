@@ -46,7 +46,7 @@ function App() {
 					<Route path='/login'> <LogIn /> </Route>
           <Route path='/profile'> <ViewProfile /> </Route>
 					<Route path='/search'> <Search /> </Route>
-					<Route path='/food/{food_id}'> <Results /> </Route>
+					<Route path='/food/'> <Results /> </Route>
 					<Route path='/'> <Homepage /> </Route>
 
 				</Switch>

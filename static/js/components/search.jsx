@@ -28,7 +28,7 @@ function PostResult(props) {
         return res.json();
       })
       .then(data => {
-        console.log(data)
+        // console.log(data)
         setPostResultData(data);
       })
       .catch(err => {
@@ -61,8 +61,7 @@ function PostResult(props) {
             <p>Distribution pattern: {result.distribution_pattern}</p>
             <p>Reason for recall: {result.reason_for_recall}</p>
             <p>Status: {result.status}</p>
-            <a href={'/food/' + result.food_id}>View Details</a>
-            {console.log(result.recall_number)}
+            <Link to={'/food/' + result.food_id}>View Details</Link>
           </div>))
         }
       </div>
@@ -96,7 +95,6 @@ function SearchBar(props) {
   
     fetch('/api/results', options)
     .then(response => {
-      console.log('first then response: ' + response);
       setSearched(true);
     })
     .catch(err => {
