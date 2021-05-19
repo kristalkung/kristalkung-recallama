@@ -228,7 +228,9 @@ def search_results():
                 recall_initiation_date = recall['recall_initiation_date'], 
                 status = recall['status']
 
-                crud.create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status)
+                food_recall = crud.create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status)
+
+                # try pasting lines 241 - 258 here. let's see if we can manually create dict for each added recall and return a list of added recall dicts
 
     return jsonify(result)
 

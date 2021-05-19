@@ -17,7 +17,7 @@ model.db.create_all()
 
 
 # Load food recall data from JSON file
-with open('data/shorter.json') as food_recalls:
+with open('data/food-recalls.json') as food_recalls:
     food_recall_data = json.loads(food_recalls.read())
 
 # Create food recalls, store them in list so we can use them
