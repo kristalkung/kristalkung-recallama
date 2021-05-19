@@ -41,10 +41,34 @@ function Results(props) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     console.log('save to profile was clicked')
+    console.log(food_id)
+
+    const data = {
+      food_id
+
+    }
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+  
+  //   fetch('/api/results', options)
+  //   .then(response => {
+  //     // setSearched(true);
+  //   })
+  //   .catch(err => {
+  //     console.log(`search failed due to ${err}`);
+  //   });
+  // }
+
   }
 
   return (
-    <div className='individualRecall'>
+    <form action='/save-to-profile' onSubmit={(evt) => handleSubmit(evt)} method='POST'>
+      <div className='individualRecall'>
       <h3> {recallData.recalling_firm}</h3>
       <p>Report Date: {recallData.report_date}</p>
       <p>Description: {recallData.product_description}</p>
@@ -53,6 +77,7 @@ function Results(props) {
       <p>Status: {recallData.status}</p>
       <button>Save to Profile</button>
     </div>
+    </form>
     // <div>
     //   <p>this is the result</p>
     //   <div>{recallData.code_info}</div>
