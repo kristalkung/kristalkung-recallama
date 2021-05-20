@@ -245,15 +245,26 @@ def view_food_recall_info(food_id):
 
     return jsonify(food_dict)
 
-    # return render_template('results.html', results=food_recall)
+@app.route('/save-to-profile', methods=["POST"])
+def save_recall_to_profile():
+
+    data = request.get_json()
+
+    print('****hello save to profile server')
+    food_id = int(data['food_id'])
+    comment = data['comment']
+
+    if 'user' in session:
+        user = crud.get_user_by_id(session['user'])
+        food = crud.get_food_recall_by_id(food_id)
+        
+        crud.create_favorite_food_recall(comment, user, food)
+        print('****hello user is in session')
+        return '"favorite added"'
+    else:
+        print('****hello user not in session')
+        return '"please log in"'
     
-# @app.route('/users/<user_id>')
-# def user_details(user_id):
-#     """View user details."""
-
-#     user = crud.get_user_by_id(user_id)
-
-#     return render_template('user_details.html', user=user)
 
 if __name__ == '__main__':
     connect_to_db(app)

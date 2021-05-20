@@ -1,14 +1,40 @@
-
-function RecallField(props) {
-	return <li>{props.code_info}</li>
-}
+"use strict";
 
 function Results(props) {
-  console.log("hello results function rendered")
-
   let {food_id}  = useParams();
 
   const [recallData, setRecallData] = React.useState(null);
+  const [ comment, setComment ] = React.useState("")
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    const data = {
+      food_id,
+      comment
+    }
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+  
+    fetch('/save-to-profile', options)
+    .then(response => response.json())
+    .then(data => {
+      if (data === "favorite added") {
+        alert('This recall was added to your profile!')
+      }
+      else {
+        alert('Please log in to save this recall to your profile')
+      }
+    })
+    .catch(err => {
+      console.log(`search failed due to ${err}`);
+    });
+  }
 
   React.useEffect(() => {
 
@@ -32,56 +58,28 @@ function Results(props) {
     })
   }, [food_id])
 
-  console.log(recallData);
-
   if (recallData === null) {
     return <div>no data</div>;
   }
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log('save to profile was clicked')
-    console.log(food_id)
-
-    const data = {
-      food_id
-
-    }
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
-  
-  //   fetch('/api/results', options)
-  //   .then(response => {
-  //     // setSearched(true);
-  //   })
-  //   .catch(err => {
-  //     console.log(`search failed due to ${err}`);
-  //   });
-  // }
-
-  }
-
   return (
-    <form action='/save-to-profile' onSubmit={(evt) => handleSubmit(evt)} method='POST'>
+    <div>
       <div className='individualRecall'>
-      <h3> {recallData.recalling_firm}</h3>
-      <p>Report Date: {recallData.report_date}</p>
-      <p>Description: {recallData.product_description}</p>
-      <p>Distribution pattern: {recallData.distribution_pattern}</p>
-      <p>Reason for recall: {recallData.reason_for_recall}</p>
-      <p>Status: {recallData.status}</p>
-      <button>Save to Profile</button>
+        <h3> {recallData.recalling_firm}</h3>
+        <p>Report Date: {recallData.report_date}</p>
+        <p>Description: {recallData.product_description}</p>
+        <p>Distribution pattern: {recallData.distribution_pattern}</p>
+        <p>Reason for recall: {recallData.reason_for_recall}</p>
+        <p>Status: {recallData.status}</p>
+      </div>
+      <form action='/save-to-profile' onSubmit={(evt) => handleSubmit(evt)} method='POST'>
+        Want to save this to your profile?
+        <br/>
+        Add a comment:
+        <input type='text' name='comment' onChange={(e) => setComment(e.target.value)}></input>
+        <button>Save to Profile</button>
+      </form>
     </div>
-    </form>
-    // <div>
-    //   <p>this is the result</p>
-    //   <div>{recallData.code_info}</div>
-    // </div>
       
   )
 }

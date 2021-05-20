@@ -38,6 +38,7 @@ function SignUp() {
       } else {
         console.log(data)
         history.push("/login")
+        
         // redirects user to the login page
       }
       
