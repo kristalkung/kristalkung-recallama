@@ -245,12 +245,17 @@ def view_food_recall_info(food_id):
 
     return jsonify(food_dict)
 
+@app.route('/food/<food_id>')
+def view_food_recall(food_id):
+    """View a single food recall"""
+
+    return render_template('root.html', food_id=food_id)
+
 @app.route('/save-to-profile', methods=["POST"])
 def save_recall_to_profile():
 
     data = request.get_json()
 
-    print('****hello save to profile server')
     food_id = int(data['food_id'])
     comment = data['comment']
 
@@ -259,12 +264,43 @@ def save_recall_to_profile():
         food = crud.get_food_recall_by_id(food_id)
         
         crud.create_favorite_food_recall(comment, user, food)
-        print('****hello user is in session')
         return '"favorite added"'
     else:
-        print('****hello user not in session')
         return '"please log in"'
     
+@app.route('/api/profile/<user_id>', methods=['POST'])
+def view_favorites(user_id):
+    """View a user's favorites(saved recalls)"""
+
+    obj_list = crud.get_all_favorites_by_user(user_id)
+
+    fav_list = []
+
+    for favorite in obj_list:
+
+        fav_dict = {}
+    
+        user_id = favorite.user_id, 
+        food_id = favorite.food_id, 
+        comment = favorite.comment, 
+
+        fav_dict['user'] = user_id[0]
+        fav_dict['food'] = food_id[0]
+        fav_dict['comment'] = comment[0]
+        
+        fav_list.append(fav_dict)
+
+    return jsonify(fav_list)
+    # return '"{user_id}"'
+
+@app.route('/profile')
+def view_profile_for_logged_in_users():
+    if 'user' in session:
+        user = crud.get_user_by_id(session['user'])
+
+        user_id = user.user_id
+        return render_template('root.html', user_id=user_id)
+
 
 if __name__ == '__main__':
     connect_to_db(app)

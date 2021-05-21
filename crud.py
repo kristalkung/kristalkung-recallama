@@ -94,6 +94,13 @@ def create_favorite_food_recall(comment, user, food):
 
     return favorite
 
+
+def get_all_favorites_by_user(user_id):
+    """Returns a list of all favorites of a user."""
+
+    return Favorite.query.filter(Favorite.user_id == user_id).all()
+
+
 def create_drug_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status):
     """Create and returns a new drug recall."""
 
