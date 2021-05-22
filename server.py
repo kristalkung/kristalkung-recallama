@@ -139,6 +139,26 @@ def login():
         flash('incorrect login')
         return redirect('/login')
 
+@app.route('/api/logout', methods=["POST"])
+def logout():
+    """Logs out a user."""
+
+    data = request.get_json()
+
+    log_out_response = data['logout']
+
+    print(f'data is: {data}')
+    print(f'log out response is: {log_out_response}')
+
+    if log_out_response == "yes":
+        del session['user']
+        del session['user_name']
+
+        return '"log out successful"'
+    else:
+        return '"no log out"'
+    
+
 
 @app.route('/api/signup', methods=["POST"])
 def signup():
@@ -156,7 +176,6 @@ def signup():
     new_user = crud.create_user(input_fname, input_lname, input_email, input_password)
 
     return '"account made"'
-
 
 @app.route('/api/results', methods=["POST"])
 def search_results():
@@ -307,7 +326,6 @@ def view_profile_for_logged_in_users():
 
         user_id = user.user_id
         return render_template('root.html', user_id=user_id)
-
 
 if __name__ == '__main__':
     connect_to_db(app)

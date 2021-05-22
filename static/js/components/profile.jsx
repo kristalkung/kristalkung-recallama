@@ -3,18 +3,20 @@
 
 function ViewProfile() {
 
-    if (window.user_id) 
-    return (
-      <div>
-        <h2>{window.user_name}</h2>
+    if (window.user_id & window.user_id != "null") {
+      return (
         <div>
-          Here are your saved recalls:
+          <h2>{window.user_name}</h2>
+          <div>
+            Here are your saved recalls:
+          </div>
+          <div>
+            <ViewFavorites />
+          </div>
         </div>
-        <div>
-          <ViewFavorites />
-        </div>
-      </div>
-    )
+      )
+    }
+    
     else return <h2> Please log in to view your profile.</h2>
   }
   
