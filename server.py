@@ -268,7 +268,7 @@ def save_recall_to_profile():
     else:
         return '"please log in"'
     
-@app.route('/api/profile/<user_id>', methods=['POST'])
+@app.route('/api/profile/<user_id>', methods=['GET'])
 def view_favorites(user_id):
     """View a user's favorites(saved recalls)"""
 
@@ -284,6 +284,13 @@ def view_favorites(user_id):
         food_id = favorite.food_id, 
         comment = favorite.comment, 
 
+        food = crud.get_food_recall_by_id(food_id[0])
+
+        food_recalling_firm = food.recalling_firm
+        food_product_description = food.product_description
+
+        fav_dict['recalling_firm'] = food_recalling_firm
+        fav_dict['description'] = food_product_description
         fav_dict['user'] = user_id[0]
         fav_dict['food'] = food_id[0]
         fav_dict['comment'] = comment[0]
