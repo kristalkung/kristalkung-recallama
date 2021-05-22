@@ -111,7 +111,7 @@ API_KEY = os.environ['OPENFDA_KEY']
 
 ##########
 
-
+@app.route('/logout')
 @app.route('/profile')
 @app.route('/results')
 @app.route('/signup')
