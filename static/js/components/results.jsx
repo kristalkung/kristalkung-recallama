@@ -79,6 +79,11 @@ function Results(props) {
         <input type='text' name='comment' onChange={(e) => setComment(e.target.value)}></input>
         <button>Save to Profile</button>
       </form>
+      {/* <form action='/api/share'>
+        Want to share this recall to someone?
+        <input type='text'>Mail From: </input>
+
+      </form> */}
     </div>
       
   )

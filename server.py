@@ -329,7 +329,11 @@ def view_profile_for_logged_in_users():
         user_id = user.user_id
         return render_template('root.html', user_id=user_id)
 
-@app.route('/api/share')
+@app.route('/api/share', methods=['POST'])
+def share_recall():
+    """Shares recall by email using SendGrid."""
+    return 'hello'
+
 
 if __name__ == '__main__':
     connect_to_db(app)
