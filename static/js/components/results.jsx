@@ -79,14 +79,9 @@ function Results(props) {
         <input type='text' name='comment' onChange={(e) => setComment(e.target.value)}></input>
         <button>Save to Profile</button>
       </form>
-      {/* <form action='/api/share'>
-        Want to share this recall to someone?
-        <input type='text'>Mail From: </input>
-
-      </form> */}
+      <a href={`mailto:?subject=Check out this Food Recall from ${recallData.recalling_firm}&body=Hey! \nThought you might be interested in checking this out: http://localhost:5000/food/${food_id}`}>Send email</a>
     </div>
       
   )
 }
-
 

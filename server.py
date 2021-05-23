@@ -11,12 +11,9 @@ from pprint import pformat
 import os
 import requests
 
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
-
-
 app = Flask(__name__)
 app.jinja_env.undefined = StrictUndefined
+app.secret_key = 'secret key'
 
 API_KEY = os.environ['OPENFDA_KEY']
 
