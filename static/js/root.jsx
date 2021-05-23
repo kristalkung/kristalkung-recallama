@@ -18,7 +18,7 @@ const useParams = ReactRouterDOM.useParams;
 
 function App() {
 
-  if (window.user_id & window.user_id !== "null") {
+  if (window.user_id) {
 
     return (
       <Router>

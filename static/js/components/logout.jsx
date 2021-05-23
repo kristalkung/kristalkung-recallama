@@ -8,31 +8,6 @@ function LogOut() {
     e.preventDefault();
   }
 
-  
-
-  function handleNo() {
-    const data = {
-      logout: 'no'
-    }
-
-    const options = {
-			"method": "POST",
-			headers: {
-				"Content-Type": "application/json"
-				// tells the server during the post that this is a json string
-			},
-			// turn data into JSON
-			body: JSON.stringify(data)
-		}
-
-    fetch('/api/logout', options)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    history.push('/profile')
-  }
-
-
-
   return (
 
     <form action='/api/logout' onSubmit={handleSubmit}>
@@ -42,8 +17,6 @@ function LogOut() {
 
     </form>
   )
-    
-
 }
 
 function handleYes() {
@@ -76,4 +49,25 @@ function handleYes() {
       alert('log out failed')
     }
   })
+}
+
+function handleNo() {
+  const data = {
+    logout: 'no'
+  }
+
+  const options = {
+    "method": "POST",
+    headers: {
+      "Content-Type": "application/json"
+      // tells the server during the post that this is a json string
+    },
+    // turn data into JSON
+    body: JSON.stringify(data)
+  }
+
+  fetch('/api/logout', options)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  history.push('/profile')
 }

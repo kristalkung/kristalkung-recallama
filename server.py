@@ -11,9 +11,11 @@ from pprint import pformat
 import os
 import requests
 
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
 
 app = Flask(__name__)
-app.secret_key = "M3XIXXKzRa3hlxp404ldCUSeCxn3a7Ubfl17TRro"
 app.jinja_env.undefined = StrictUndefined
 
 API_KEY = os.environ['OPENFDA_KEY']
@@ -326,6 +328,8 @@ def view_profile_for_logged_in_users():
 
         user_id = user.user_id
         return render_template('root.html', user_id=user_id)
+
+@app.route('/api/share')
 
 if __name__ == '__main__':
     connect_to_db(app)
