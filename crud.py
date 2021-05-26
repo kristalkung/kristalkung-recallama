@@ -139,6 +139,11 @@ def get_drug_recall_by_id(drug_id):
 
     return Drug.query.get(drug_id)
 
+def get_drug_recall_by_recall_number(input_recall_number):
+    """Returns drug recall by recall number."""
+
+    return Drug.query.filter(Drug.recall_number == input_recall_number).first()
+
 def create_favorite_drug_recall(comment, user, drug):
     """Create and return a new favorite drug recall."""
     

@@ -29,7 +29,7 @@ function App() {
           <ul>
             <li> <Link to='/'>Home</Link></li>
             <li> <Link to='/logout'>Logout</Link></li>
-            <li> <Link to='/search'>Search</Link></li>
+            <li> <Link to='/search/food'>Search</Link></li>
             <li> <Link to='/profile'>View my profile</Link></li>
           </ul>
         </nav>
@@ -38,7 +38,8 @@ function App() {
 				<Switch>
 					<Route path='/logout'> <LogOut /> </Route>
           <Route path='/profile'> <ViewProfile /> </Route>
-					<Route path='/search'> <Search /> </Route>
+					<Route path='/search/food'> <SearchFood /> </Route>
+          <Route path='/search/drug'> <SearchDrug /> </Route>
 					<Route path='/food/:food_id'> <Results /> </Route>
 					<Route path='/'> <Homepage /> </Route>
 
@@ -59,7 +60,7 @@ function App() {
             <ul>
               <li><Link to='/'>Home</Link></li>
               <li><Link to='/signup'>Sign up</Link></li>
-              <li><Link to='/search'>Search</Link></li>
+              <li><Link to='/search/food'>Search</Link></li>
               <li><Link to='/login'>Login</Link></li>
               <li><Link to='/profile'>View my profile</Link></li>
             </ul>
@@ -70,8 +71,9 @@ function App() {
             <Route path='/signup'> <SignUp /> </Route>
             <Route path='/login'> <LogIn /> </Route>
             <Route path='/profile'> <ViewProfile /> </Route>
-            <Route path='/search'> <Search /> </Route>
-            <Route path='/food/:food_id'> <Results /> </Route>
+            <Route path='/search/food'> <SearchFood /> </Route>
+            <Route path='/search/drug'> <SearchDrug /> </Route>
+            <Route path='/food/:food_id'> <FoodResults /> </Route>
             <Route path='/'> <Homepage /> </Route>
   
           </Switch>

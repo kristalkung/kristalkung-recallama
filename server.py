@@ -22,7 +22,8 @@ API_KEY = os.environ['OPENFDA_KEY']
 @app.route('/results')
 @app.route('/signup')
 @app.route('/login')
-@app.route('/search')
+@app.route('/search/food')
+@app.route('/search/drug')
 @app.route('/')
 def homepage():
     """view homepage"""
@@ -82,7 +83,7 @@ def signup():
     return '"account made"'
 
 @app.route('/api/food-results', methods=["POST"])
-def search_results():
+def search_food_results():
 
     payload = {
         'api_key': API_KEY,
@@ -179,6 +180,57 @@ def save_food_recall_to_profile():
         return '"favorite added"'
     else:
         return '"please log in"'
+
+@app.route('/api/drug-results', methods=["POST"])
+def search_drug_results():
+
+    payload = {
+        'api_key': API_KEY,
+        'limit': "50"
+    }
+
+    product_description = request.json.get("description")
+    reason_for_recall = request.json.get("reasonForRecall")
+    recalling_firm = request.json.get("recallingFirm")    
+
+    search_terms = []
+    if product_description:
+        search_terms.append(f'product_description:"{product_description}"')
+    if reason_for_recall:
+        search_terms.append(f'reason_for_recall:"{reason_for_recall}"')
+    if recalling_firm:
+        search_terms.append(f'recalling_firm:"{recalling_firm}"')
+
+    if search_terms:
+        payload['search'] = '+AND+'.join(search_terms)
+    
+    url = 'https://api.fda.gov/drug/enforcement.json'
+    complete_url = url + '?' + 'api_key=' + payload['api_key'] + '&search=' + payload['search'] + '&limit=' + payload['limit']
+
+    data = requests.get(complete_url).json()
+
+    print(f"***** data {data}")
+
+    result = {}
+
+    if data.get('error'):
+        result['results'] = None
+        result['error'] = data['error']
+    else:
+        recall_list = data['results']
+
+        for recall in recall_list:
+            input_recall_number = recall['recall_number']
+            recall_obj = crud.get_drug_recall_by_recall_number(input_recall_number)
+
+            obj_id = recall_obj.drug_id
+
+            recall['drug_id'] = obj_id
+
+        result['results'] = recall_list
+        result['error'] = None
+
+    return jsonify(result)
 
 @app.route('/drug/<drug_id>')
 def view_drug_recall(drug_id):
