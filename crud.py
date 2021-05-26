@@ -41,7 +41,7 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
-def create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status):
+def create_food_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status, product_quantity, distribution_pattern, product_type, classification):
     """Create and returns a new food recall."""
 
     food_recall = Food(recall_number=recall_number, 
@@ -50,7 +50,11 @@ def create_food_recall(recall_number, product_description, code_info, recalling_
                        recalling_firm=recalling_firm, 
                        reason_for_recall=reason_for_recall, 
                        recall_initiation_date=recall_initiation_date, 
-                       status=status)
+                       status=status,
+                       product_quantity=product_quantity,
+                       distribution_pattern=distribution_pattern,
+                       product_type=product_type,
+                       classification=classification)
     db.session.add(food_recall)
     db.session.commit()
 
@@ -101,7 +105,7 @@ def get_all_favorites_by_user(user_id):
     return Favorite.query.filter(Favorite.user_id == user_id).all()
 
 
-def create_drug_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status):
+def create_drug_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status, product_quantity, distribution_pattern, product_type, classification):
     """Create and returns a new drug recall."""
 
     drug_recall = Drug(recall_number=recall_number, 
@@ -110,7 +114,11 @@ def create_drug_recall(recall_number, product_description, code_info, recalling_
                        recalling_firm=recalling_firm, 
                        reason_for_recall=reason_for_recall, 
                        recall_initiation_date=recall_initiation_date, 
-                       status=status)
+                       status=status,
+                       product_quantity=product_quantity,
+                       distribution_pattern=distribution_pattern,
+                       product_type=product_type,
+                       classification=classification)
     db.session.add(drug_recall)
     db.session.commit()
 

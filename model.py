@@ -35,6 +35,10 @@ class Food(db.Model):
     reason_for_recall = db.Column(db.String, nullable=False)
     recall_initiation_date = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String, nullable=False)
+    product_quantity = db.Column(db.String, nullable=False)
+    distribution_pattern = db.Column(db.String, nullable=False)
+    product_type = db.Column(db.String, nullable=False)
+    classification = db.Column(db.String, nullable=False)
 
     def __repr__(self):
         return f'<Food recall_number={self.recall_number}, recalling_firm={self.recalling_firm}, status={self.status}>'
@@ -53,9 +57,13 @@ class Drug(db.Model):
     product_description = db.Column(db.String, nullable=False)
     code_info = db.Column(db.String, nullable=False)
     recalling_firm = db.Column(db.String, nullable=False) 
-    recall_reason = db.Column(db.String, nullable=False)
+    reason_for_recall = db.Column(db.String, nullable=False)
     recall_initiation_date = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String, nullable=False)
+    product_quantity = db.Column(db.String, nullable=False)
+    distribution_pattern = db.Column(db.String, nullable=False)
+    product_type = db.Column(db.String, nullable=False)
+    classification = db.Column(db.String, nullable=False)
 
     def __repr__(self):
         return f'<Drug recall_number={self.recall_number}, recalling_firm={self.recalling_firm}, status={self.status}>'
