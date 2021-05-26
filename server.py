@@ -17,99 +17,6 @@ app.secret_key = 'secret key'
 
 API_KEY = os.environ['OPENFDA_KEY']
 
-# @app.route('/')
-# def homepage():
-#     return render_template('homepage.html')
-
-# @app.route('/login')
-# def show_login():
-
-#     if session['user']:
-#         flash('You are already logged in')
-#         return redirect('/search')
-
-#     return render_template('login.html')
-
-# @app.route('/login', methods=['POST'])
-# def login_user():
-
-#     input_email = request.form.get('email')
-#     input_password = request.form.get('password')
-
-#     user = crud.get_user_by_email(input_email)
-
-#     if user and user.password == input_password:
-#         session['user'] = user.user_id
-#         return redirect('/search')
-#     else:
-#         flash('incorrect login')
-#         return redirect('/login')
-
-
-# @app.route('/signup')
-# def show_signup_form():
-    
-#     return render_template('signup.html')
-
-# @app.route('/signup', methods=["POST"])
-# def signup():
-#     fname = request.form.get('fname')
-#     lname = request.form.get('lname')
-#     email = request.form.get('email')
-#     password = request.form.get('password')
-
-#     if email in crud.get_all_emails():
-#         flash('An account has already been made with this email. Try again')
-#         return redirect('/signup')
-
-#     else:
-#         crud.create_user(fname, lname, email, password)
-#         flash('Your account has been created. Please log in.')
-#         return redirect('/login')
-
-# @app.route('/search')
-# def show_search():
-#     return render_template('search.html')
-
-# @app.route('/search', methods=["POST"])
-# def show_results():
-#     payload = {
-#         'api_key': API_KEY,
-#         'limit': 5
-#     }
-#     product_description = request.form.get("description")
-#     status = request.form.get("status")
-#     reason_for_recall = request.form.get("reason-for-recall")
-#     recalling_firm = request.form.get("recalling-firm")
-
-#     search_terms = []
-
-#     if product_description:
-#         search_terms.append(f'product_description:"{product_description}"')
-#     if status:
-#         search_terms.append(f'status:"{status}"')
-#     if reason_for_recall:
-#         search_terms.append(f'reason_for_recall:"{reason_for_recall}"')
-#     if recalling_firm:
-#         search_terms.append(f'recalling_firm:"{recalling_firm}"')
-    
-#     if search_terms:
-#         payload['search'] = '+AND+'.join(search_terms)
-    
-#     url = 'https://api.fda.gov/food/enforcement.json'
-
-#     data = requests.get(url, params=payload).json()
-
-#     if data.get('error'):
-#         return data
-
-#     data_list = data['results']
-
-#     return render_template('results.html', results=data_list)
-
-
-##########
-
 @app.route('/logout')
 @app.route('/profile')
 @app.route('/results')
@@ -157,8 +64,6 @@ def logout():
     else:
         return '"no log out"'
     
-
-
 @app.route('/api/signup', methods=["POST"])
 def signup():
 
@@ -176,46 +81,35 @@ def signup():
 
     return '"account made"'
 
-@app.route('/api/results', methods=["POST"])
+@app.route('/api/food-results', methods=["POST"])
 def search_results():
 
     payload = {
         'api_key': API_KEY,
-        'limit': 5
+        'limit': "50"
     }
-
-    # print(request.json)
-    # print(request.get_json())
 
     product_description = request.json.get("description")
     reason_for_recall = request.json.get("reasonForRecall")
     recalling_firm = request.json.get("recallingFirm")    
-       
 
     search_terms = []
-
     if product_description:
         search_terms.append(f'product_description:"{product_description}"')
     if reason_for_recall:
         search_terms.append(f'reason_for_recall:"{reason_for_recall}"')
     if recalling_firm:
         search_terms.append(f'recalling_firm:"{recalling_firm}"')
-    
+
     if search_terms:
         payload['search'] = '+AND+'.join(search_terms)
-
-    # print(search_terms)
-    # print(f'payload is: {payload}')
-
-    # url = 'https://api.fda.gov/food/enforcement.json?search=status=Terminated&limit=5'
-    # url = 'https://api.fda.gov/food/enforcement.json?search=status:"Terminated"+AND+recalling_firm:"Harry"&limit=5'
-
-    url = 'https://api.fda.gov/food/enforcement.json'
     
-    # CURRENT STATE: can query just 1 field
-    # TODO: make it work with >1 fields entered in.
+    url = 'https://api.fda.gov/food/enforcement.json'
+    complete_url = url + '?' + 'api_key=' + payload['api_key'] + '&search=' + payload['search'] + '&limit=' + payload['limit']
 
-    data = requests.get(url, params=payload).json()
+    data = requests.get(complete_url).json()
+
+    print(f"***** data {data}")
 
     result = {}
 
@@ -269,8 +163,8 @@ def view_food_recall(food_id):
 
     return render_template('root.html', food_id=food_id)
 
-@app.route('/save-to-profile', methods=["POST"])
-def save_recall_to_profile():
+@app.route('/save-food-to-profile', methods=["POST"])
+def save_food_recall_to_profile():
 
     data = request.get_json()
 
@@ -286,8 +180,53 @@ def save_recall_to_profile():
     else:
         return '"please log in"'
 
+@app.route('/drug/<drug_id>')
+def view_drug_recall(drug_id):
+    """View a single drug recall"""
 
+    return render_template('root.html', drug_id=drug_id)
 
+@app.route('/api/drug/<drug_id>', methods=["POST"])
+def view_drug_recall_info(drug_id):
+    """View an individual drug recall's information."""
+
+    drug_recall = crud.get_drug_recall_by_id(drug_id)
+    drug_dict = {}
+    
+    recall_number = drug_recall.recall_number, 
+    product_description = drug_recall.product_description, 
+    code_info = drug_recall.code_info, 
+    recalling_firm = drug_recall.recalling_firm, 
+    reason_for_recall = drug_recall.reason_for_recall, 
+    recall_initiation_date = drug_recall.recall_initiation_date, 
+    status = drug_recall.status
+
+    drug_dict['recall_number'] = recall_number[0]
+    drug_dict['product_description'] = product_description[0]
+    drug_dict['code_info'] = code_info[0]
+    drug_dict['recalling_firm'] = recalling_firm[0]
+    drug_dict['reason_for_recall'] = reason_for_recall[0]
+    drug_dict['recall_initiation_date'] = recall_initiation_date[0]
+    drug_dict['status'] = status
+
+    return jsonify(drug_dict)
+
+@app.route('/save-drug-to-profile', methods=["POST"])
+def save_drug_recall_to_profile():
+
+    data = request.get_json()
+
+    drug_id = int(data['drug_id'])
+    comment = data['comment']
+
+    if 'user' in session:
+        user = crud.get_user_by_id(session['user'])
+        drug = crud.get_drug_recall_by_id(drug_id)
+        
+        crud.create_favorite_drug_recall(comment, user, drug)
+        return '"favorite added"'
+    else:
+        return '"please log in"'
     
 @app.route('/api/profile/<user_id>', methods=['GET'])
 def view_favorites(user_id):
@@ -359,11 +298,6 @@ def view_profile_for_logged_in_users():
 
         user_id = user.user_id
         return render_template('root.html', user_id=user_id)
-
-# @app.route('/api/share', methods=['POST'])
-# def share_recall():
-#     """Shares recall by email using SendGrid."""
-#     return 'hello'
 
 
 if __name__ == '__main__':

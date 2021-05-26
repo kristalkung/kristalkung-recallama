@@ -21,7 +21,7 @@ function Results(props) {
       body: JSON.stringify(data)
     };
   
-    fetch('/save-to-profile', options)
+    fetch('/save-food-to-profile', options)
     .then(response => response.json())
     .then(data => {
       if (data === "favorite added") {

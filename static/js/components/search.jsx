@@ -12,9 +12,11 @@ function PostResult(props) {
     if (props.search) {
       const data = {
         description: props.description,
+        field: props.field,
         reasonForRecall: props.reasonForRecall,
         recallingFirm: props.recallingFirm,
       };
+      console.log(data)
       const options = {
         method: 'POST',
         headers: {
@@ -23,7 +25,7 @@ function PostResult(props) {
         body: JSON.stringify(data)
       };
 
-      fetch('/api/results', options)
+      fetch('/api/food-results', options)
       .then(res => {
         return res.json();
       })
@@ -71,10 +73,11 @@ function PostResult(props) {
 
 function SearchBar(props) {
 
-  const [ description, setDescription ] = React.useState("")
-  const [ reasonForRecall, setReasonForRecall ] = React.useState("")
-  const [ recallingFirm, setRecallingFirm ] = React.useState("")
+  const [ description, setDescription ] = React.useState("");
+  const [ reasonForRecall, setReasonForRecall ] = React.useState("");
+  const [ recallingFirm, setRecallingFirm ] = React.useState("");
   const [searched, setSearched] = React.useState(false);
+  // const [ field, setField ] = React.useState("productDescription");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -82,7 +85,8 @@ function SearchBar(props) {
     const data = {
       description,
       reasonForRecall,
-      recallingFirm
+      recallingFirm,
+      // field
     };
   
     const options = {
@@ -93,9 +97,10 @@ function SearchBar(props) {
       body: JSON.stringify(data)
     };
   
-    fetch('/api/results', options)
+    fetch('/api/food-results', options)
     .then(response => {
       setSearched(true);
+      // console.log(response)
     })
     .catch(err => {
       console.log(`search failed due to ${err}`);
@@ -123,6 +128,8 @@ function SearchBar(props) {
       </div>
       <div className='post-result-container'>
         <PostResult search={searched} setSearch={setSearched} description={description} reasonForRecall={reasonForRecall} recallingFirm={recallingFirm} />
+
+        {/* <PostResult description={description} search={searched} setSearch={setSearched} field={field}/> */}
       </div>
     </div>
 
@@ -141,3 +148,20 @@ function Search() {
     </div>
   )  
 }
+
+
+
+
+        
+
+
+        // <form action='/api/food-results' onSubmit={(evt) => {handleSubmit(evt)}} method="POST">
+        //   Description
+        //   <input value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
+        //   <select name="field" onChange={(e) => setField(e.target.value)}>
+        //     <option value='productDescription'>Product Description</option>
+        //     <option value='reasonForRecall'>Reason for recall</option>
+        //     <option value='recallingFirm'>Recalling firm</option>
+        //   </select>
+        //   <button type="submit">Search</button>
+        // </form>
