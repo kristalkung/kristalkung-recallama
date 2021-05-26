@@ -124,6 +124,11 @@ def create_drug_recall(recall_number, product_description, code_info, recalling_
 
     return drug_recall
 
+def get_drug_recall_by_id(drug_id):
+    """Returns drug recall by ID."""
+
+    return Drug.query.get(drug_id)
+
 def create_favorite_drug_recall(comment, user, drug):
     """Create and return a new favorite drug recall."""
     

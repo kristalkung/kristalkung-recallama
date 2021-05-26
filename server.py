@@ -291,32 +291,45 @@ def view_favorites(user_id):
     """View a user's favorites(saved recalls)"""
 
     obj_list = crud.get_all_favorites_by_user(user_id)
-
+    
     fav_list = []
 
     for favorite in obj_list:
 
         fav_dict = {}
     
-        user_id = favorite.user_id, 
-        food_id = favorite.food_id, 
-        comment = favorite.comment, 
+        user_id = favorite.user_id 
+        food_id = favorite.food_id 
+        drug_id = favorite.drug_id
+        comment = favorite.comment 
 
-        food = crud.get_food_recall_by_id(food_id[0])
+        if food_id == None:
+            drug = crud.get_drug_recall_by_id(drug_id)
 
-        food_recalling_firm = food.recalling_firm
-        food_product_description = food.product_description
+            drug_recalling_firm = drug.recalling_firm
+            drug_product_description = drug.product_description
 
-        fav_dict['recalling_firm'] = food_recalling_firm
-        fav_dict['description'] = food_product_description
-        fav_dict['user'] = user_id[0]
-        fav_dict['food'] = food_id[0]
-        fav_dict['comment'] = comment[0]
+            fav_dict['recalling_firm'] = drug_recalling_firm
+            fav_dict['description'] = drug_product_description
+            fav_dict['user'] = user_id
+
+        elif drug_id == None:
+            food = crud.get_food_recall_by_id(food_id)
+
+            food_recalling_firm = food.recalling_firm
+            food_product_description = food.product_description
+
+            fav_dict['recalling_firm'] = food_recalling_firm
+            fav_dict['description'] = food_product_description
+            fav_dict['food'] = food_id
+
+        fav_dict['user'] = user_id
+        fav_dict['comment'] = comment
         
         fav_list.append(fav_dict)
-
+    
     return jsonify(fav_list)
-    # return '"{user_id}"'
+    
 
 @app.route('/profile')
 def view_profile_for_logged_in_users():
