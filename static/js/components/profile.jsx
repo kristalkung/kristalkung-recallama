@@ -74,10 +74,10 @@ function ViewFavorites() {
       {favorites.map((result, index) => (
         <div key={index}>
           <h3>{result.recalling_firm}</h3>
-          <p>{result.description}</p>
-          <p>{result.comment}</p>
+          <p>Description {result.description}</p>
+          <p>My comment: {result.comment}</p>
           <p>favorite id: {result.favorite_id}</p>
-          <Link to={'/food/' + result.food}>View Details</Link>
+          <Link to={'/' + result.product_type + '/' + result.id}>View Details</Link>
           <br/>
           <button type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
 

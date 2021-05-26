@@ -232,7 +232,7 @@ def search_drug_results():
 
     return jsonify(result)
 
-@app.route('/drug/<drug_id>')
+@app.route('/drugs/<drug_id>')
 def view_drug_recall(drug_id):
     """View a single drug recall"""
 
@@ -303,20 +303,24 @@ def view_favorites(user_id):
 
             drug_recalling_firm = drug.recalling_firm
             drug_product_description = drug.product_description
+            drug_product_type = drug.product_type
 
             fav_dict['recalling_firm'] = drug_recalling_firm
             fav_dict['description'] = drug_product_description
-            fav_dict['user'] = user_id
+            fav_dict['id'] = drug_id
+            fav_dict['product_type'] = drug_product_type
 
         elif drug_id == None:
             food = crud.get_food_recall_by_id(food_id)
 
             food_recalling_firm = food.recalling_firm
             food_product_description = food.product_description
+            food_product_type = food.product_type
 
             fav_dict['recalling_firm'] = food_recalling_firm
             fav_dict['description'] = food_product_description
-            fav_dict['food'] = food_id
+            fav_dict['id'] = food_id
+            fav_dict['product_type'] = food_product_type
 
         fav_dict['favorite_id'] = favorite_id
         fav_dict['user'] = user_id

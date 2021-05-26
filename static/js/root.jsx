@@ -40,7 +40,8 @@ function App() {
           <Route path='/profile'> <ViewProfile /> </Route>
 					<Route path='/search/food'> <SearchFood /> </Route>
           <Route path='/search/drug'> <SearchDrug /> </Route>
-					<Route path='/food/:food_id'> <Results /> </Route>
+					<Route path='/food/:food_id'> <FoodResults /> </Route>
+          <Route path='/drugs/:drug_id'> <DrugResults /> </Route>
 					<Route path='/'> <Homepage /> </Route>
 
 				</Switch>
@@ -74,6 +75,7 @@ function App() {
             <Route path='/search/food'> <SearchFood /> </Route>
             <Route path='/search/drug'> <SearchDrug /> </Route>
             <Route path='/food/:food_id'> <FoodResults /> </Route>
+            <Route path='/drugs/:drug_id'> <DrugResults /> </Route>
             <Route path='/'> <Homepage /> </Route>
   
           </Switch>
