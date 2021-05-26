@@ -22,6 +22,30 @@ function ViewProfile() {
   
 function ViewFavorites() {
   const [favorites, setFavorites] = React.useState(null);
+
+  function HandleUnsave(favorite_id) {
+  
+    const data = {
+      favorite_id,
+      
+    }
+    console.log(favorite_id)
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+  
+  
+    fetch('/api/unsave', options)
+    .then(response => response.json())
+    .then(data => {
+      setFavorites(data)
+      }
+  )
+  }
   
   React.useEffect(() => {
 
@@ -52,10 +76,15 @@ function ViewFavorites() {
           <h3>{result.recalling_firm}</h3>
           <p>{result.description}</p>
           <p>{result.comment}</p>
+          <p>favorite id: {result.favorite_id}</p>
           <Link to={'/food/' + result.food}>View Details</Link>
+          <br/>
+          <button type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
+
         </div>
       ))
       }
     </div>
   )
 }
+

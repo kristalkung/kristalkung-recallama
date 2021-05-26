@@ -285,6 +285,9 @@ def save_recall_to_profile():
         return '"favorite added"'
     else:
         return '"please log in"'
+
+
+
     
 @app.route('/api/profile/<user_id>', methods=['GET'])
 def view_favorites(user_id):
@@ -297,7 +300,8 @@ def view_favorites(user_id):
     for favorite in obj_list:
 
         fav_dict = {}
-    
+
+        favorite_id = favorite.favorite_id
         user_id = favorite.user_id 
         food_id = favorite.food_id 
         drug_id = favorite.drug_id
@@ -323,13 +327,30 @@ def view_favorites(user_id):
             fav_dict['description'] = food_product_description
             fav_dict['food'] = food_id
 
+        fav_dict['favorite_id'] = favorite_id
         fav_dict['user'] = user_id
         fav_dict['comment'] = comment
         
         fav_list.append(fav_dict)
     
     return jsonify(fav_list)
+
+
+@app.route('/api/unsave', methods=['POST'])
+def unsave_recall():
+    data = request.get_json()
+
+    favorite_id = int(data['favorite_id'])
     
+    user = crud.get_user_by_favorite_id(favorite_id)
+    
+    user_id = user.user_id
+
+    crud.delete_favorite_recall(favorite_id)
+
+    updated_list = view_favorites(user_id)
+    
+    return updated_list
 
 @app.route('/profile')
 def view_profile_for_logged_in_users():

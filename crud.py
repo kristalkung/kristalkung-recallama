@@ -104,6 +104,16 @@ def get_all_favorites_by_user(user_id):
 
     return Favorite.query.filter(Favorite.user_id == user_id).all()
 
+def get_favorite_by_id(favorite_id):
+    """Returns a favorite recall by ID."""
+
+    return Favorite.query.get(favorite_id)
+
+def get_user_by_favorite_id(favorite_id):
+    """Returns a user by favorite id."""
+
+    return Favorite.query.filter(Favorite.favorite_id == favorite_id).first()
+
 
 def create_drug_recall(recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status, product_quantity, distribution_pattern, product_type, classification):
     """Create and returns a new drug recall."""
@@ -138,6 +148,14 @@ def create_favorite_drug_recall(comment, user, drug):
     db.session.commit()
 
     return favorite
+
+def delete_favorite_recall(favorite_id):
+    """Deletes a recall from a user's db"""
+
+    favorite = get_favorite_by_id(favorite_id)
+
+    db.session.delete(favorite)
+    db.session.commit()
 
 
 # this will connect to the database when running crud.py interactively
