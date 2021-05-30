@@ -13,6 +13,8 @@ const Redirect = ReactRouterDOM.Redirect;
 const useHistory = ReactRouterDOM.useHistory;
 const useParams = ReactRouterDOM.useParams;
 
+// import Nav from 'react-bootstrap/Nav';
+
 // const { Router, Route, Link, Prompt, Switch, Redirect } = ReactRouterDOM;
 
 
@@ -23,14 +25,17 @@ function App() {
     return (
       <Router>
 			<div>
-
+        
 				{/* this is the nav bar */}
-        <nav>
-          <ul>
-            <li> <Link to='/'>Home</Link></li>
-            <li> <Link to='/logout'>Logout</Link></li>
-            <li> <Link to='/search/food'>Search</Link></li>
-            <li> <Link to='/profile'>View my profile</Link></li>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="#">
+            <img src="/static/img/recallama-icon.jpg" width="30" height="30" className="d-inline-block align-top" alt="" />
+            Recallama</a>
+          <ul className="nav navbar-nav">
+            <li className="nav-item px-3"> <Link to='/'>Home</Link></li>
+            <li className="nav-item px-3"> <Link to='/logout'>Logout</Link></li>
+            <li className="nav-item px-3"> <Link to='/search/food'>Search</Link></li>
+            <li className="nav-item px-3"> <Link to='/profile'>View my profile</Link></li>
           </ul>
         </nav>
 		
@@ -48,22 +53,24 @@ function App() {
 			</div>
 		</Router>
     )
-
   }
 
   else {
     return (
       <Router>
         <div>
-  
+        
           {/* this is the nav bar */}
-          <nav>
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/signup'>Sign up</Link></li>
-              <li><Link to='/search/food'>Search</Link></li>
-              <li><Link to='/login'>Login</Link></li>
-              <li><Link to='/profile'>View my profile</Link></li>
+          <nav className="navbar navbar-expand-lg navbar-light">
+            <a className="navbar-brand" href="/" className="navbar-link">
+              <img src="/static/img/recallama-icon.jpg" width="30" height="30" className="d-inline-block align-center" alt="" />
+              Recallama</a>
+            <ul className="nav navbar-nav">
+              <li className="nav-item px-3 navbar-dark"><Link to='/' className="navbar-link">Home</Link></li>
+              <li className="nav-item px-3 navbar-dark"><Link to='/signup' className="navbar-link">Sign up</Link></li>
+              <li className="nav-item px-3 navbar-dark"><Link to='/search/food' className="navbar-link">Search</Link></li>
+              <li className="nav-item px-3 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
+              <li className="nav-item px-3 navbar-dark"><Link to='/profile' className="navbar-link">View my profile</Link></li>
             </ul>
           </nav>
       

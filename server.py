@@ -106,11 +106,9 @@ def search_food_results():
         payload['search'] = '+AND+'.join(search_terms)
     
     url = 'https://api.fda.gov/food/enforcement.json'
-    complete_url = url + '?' + 'api_key=' + payload['api_key'] + '&search=' + payload['search'] + '&limit=' + payload['limit']
+    complete_url = url + '?api_key=' + payload['api_key'] + '&search=' + payload['search'] + '&limit=' + payload['limit']
 
     data = requests.get(complete_url).json()
-
-    print(f"***** data {data}")
 
     result = {}
 

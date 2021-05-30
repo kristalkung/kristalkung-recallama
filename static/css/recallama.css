@@ -1,0 +1,19 @@
+/* Modify background color of navbar */
+.navbar-light {
+  background-color: #F18972;
+  
+}
+
+.navbar-link {
+  color: white;
+  font-size: 15px;
+}
+
+.nav-item {
+  text-align: left;
+}
+
+body {
+  background-image: url("/static/img/background-image.jpg");
+  background-size: 80%;
+}
