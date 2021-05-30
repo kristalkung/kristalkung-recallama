@@ -13,18 +13,17 @@ function LogIn() {
 		setPassword(evt.target.value)
 	}
 	return (
-		<div>
-      <h2>Login to your Recallama Account</h2>
+		<div className="login-form">
+      <h2>Login to your Account</h2>
 			<form action="/api/login" method="POST">
-				Email:
-				<input value={email} name="email" onChange={handleEmailChange} type="text"></input>
-        <br/>
-
-				Password:
-				<input value={password} name="password" onChange={handlePasswordChange} type="text"></input>
-        <br/>
-
-				<button type="submit">Login</button>
+				<div className="form-input">
+          <input className="input-item" value={email} name="email" onChange={handleEmailChange} type="text" placeholder="email"></input>
+        </div>
+				<div className="form-input">
+          <input className="input-item" value={password} name="password" onChange={handlePasswordChange} type="password" placeholder="password"></input>
+        </div>
+        
+				<button className="input-item" type="submit">Login</button>
 			</form>
 			< br />
         <a href='/signup'>Don't have an account? Click here to sign up.</a>

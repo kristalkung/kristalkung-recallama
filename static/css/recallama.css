@@ -17,3 +17,21 @@ body {
   background-image: url("/static/img/background-image.jpg");
   background-size: 80%;
 }
+
+.signup-form, .login-form {
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 500px;
+  padding: 2rem;
+}
+
+.form-input {
+  border-radius: 50px;
+}
+
+.input-item {
+  margin: 2px;
+}

@@ -63,28 +63,25 @@ function SignUp() {
 	}
 
   return (
-    <div> 
+    <div className="signup-form"> 
       <h2>
-      Signup for a Recallama account 
+      Sign up for an Account 
       </h2>
       <form className='signUpForm' onSubmit={handleSignUp}>
-        First name:
-				<input value={fname} onChange={handleFNameChange} type="text"></input>
-        <br/>
+      <div className="form-input">
+      <input className="input-item" value={fname} onChange={handleFNameChange} type="text" placeholder="First Name"></input>
+      </div>
+      <div className="form-input">
+      <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name"></input>
+      </div>
+      <div className="form-input">
+      <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email"></input>
+      </div>
+      <div className="form-input">
+      <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password"></input>
+      </div>
 
-        Last name:
-				<input value={lname} onChange={handleLNameChange} type="text"></input>
-        <br/>
-
-        Email:
-				<input value={email} onChange={handleEmailChange} type="text"></input>
-				<br/>
-        
-        Password:
-				<input value={password} onChange={handlePasswordChange} type="text"></input>
-        <br/>
-
-				<button type="submit">Sign up</button>
+			<button type="submit">Sign up</button>
 			</form>
       <br/>
       <a href='/login'>Already have an account? Click here to login.</a>
