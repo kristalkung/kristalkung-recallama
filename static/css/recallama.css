@@ -1,11 +1,12 @@
 /* Modify background color of navbar */
+
 .navbar-light {
-  background-color: #F18972;
+  background-color: #FA9874;
   
 }
 
 .navbar-link {
-  color: white;
+  color: #7F3C23;
   font-size: 15px;
 }
 
@@ -26,12 +27,41 @@ body {
   margin-top: 50px;
   width: 500px;
   padding: 2rem;
+  color: #69311C;
 }
 
 .form-input {
-  border-radius: 50px;
+  border-radius: 12px;
+  outline-color: #684132;
+  border: none;
 }
 
 .input-item {
   margin: 2px;
+  color: #69311C;
+  border-radius: 8px;
+  
 }
+
+.btn-submit {
+  background-color: #FD9169;
+  outline-color: #FD9169;
+  color: #FFEEE8;
+  border-radius: 12px;
+}
+
+.btn-submit:hover {
+  background-color: #FE7645;
+  outline-color: #FD9169;
+  color: #FFEEE8;
+}
+
+a.link-to:link, a.link-to:visited {
+  color: #88A981;
+}
+
+a.link-to:hover {
+  color: #7D9878;
+}
+
+

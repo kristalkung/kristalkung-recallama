@@ -23,10 +23,10 @@ function LogIn() {
           <input className="input-item" value={password} name="password" onChange={handlePasswordChange} type="password" placeholder="password"></input>
         </div>
         
-				<button className="input-item" type="submit">Login</button>
+				<button className="btn btn-submit" type="submit">Login</button>
 			</form>
 			< br />
-        <a href='/signup'>Don't have an account? Click here to sign up.</a>
+        <a href="/signup" className="link-to">Don't have an account? Click here to sign up.</a>
 		</div>
 	)
 }

@@ -68,23 +68,23 @@ function SignUp() {
       Sign up for an Account 
       </h2>
       <form className='signUpForm' onSubmit={handleSignUp}>
-      <div className="form-input">
-      <input className="input-item" value={fname} onChange={handleFNameChange} type="text" placeholder="First Name"></input>
-      </div>
-      <div className="form-input">
-      <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name"></input>
-      </div>
-      <div className="form-input">
-      <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email"></input>
-      </div>
-      <div className="form-input">
-      <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password"></input>
-      </div>
+        <div className="form-input">
+          <input className="input-item " value={fname} onChange={handleFNameChange} type="text" placeholder="First Name"></input>
+        </div>
+        <div className="form-input">
+          <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name"></input>
+        </div>
+        <div className="form-input">
+          <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email"></input>
+        </div>
+        <div className="form-input">
+          <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password"></input>
+        </div>
 
-			<button type="submit">Sign up</button>
+			  <button type="submit" className="btn btn-submit">Sign up</button>
 			</form>
       <br/>
-      <a href='/login'>Already have an account? Click here to login.</a>
+      <a href="/login" className="link-to">Already have an account? Click here to login.</a>
     </div>
   )
 }
