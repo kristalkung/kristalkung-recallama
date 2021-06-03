@@ -1,12 +1,13 @@
 /* Modify background color of navbar */
 
 .navbar-light {
-  background-color: #FA9874;
-  
+  background-color: #785A49;
+  /* background-color: #FA9874; */
 }
 
-.navbar-link {
-  color: #7F3C23;
+.navbar-link, .navbar-link:hover {
+  color: white;
+  /* color: #7F3C23; */
   font-size: 15px;
 }
 
@@ -15,8 +16,9 @@
 }
 
 body {
-  background-image: url("/static/img/background-image.jpg");
-  background-size: 80%;
+  /* background-image: url("/static/img/nordwood-themes.jpg"); */
+  background-image: url("/static/img/unsplash.jpg");
+  background-size: 100%;
 }
 
 .signup-form, .login-form {
@@ -40,7 +42,6 @@ body {
   margin: 2px;
   color: #69311C;
   border-radius: 8px;
-  
 }
 
 .btn-submit {
@@ -64,4 +65,40 @@ a.link-to:hover {
   color: #7D9878;
 }
 
+.bubble {
+  position: relative;
+  width: 10;
+  height: 130px;
+  padding: 30px;
+  background: #fbfbfb;
+  border-radius: 22px;
+  border: #684132 solid 3px;
+  margin-top: 50px;
+  color: #684132;
+}
 
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 7px 0 7px 25px;
+  border-color: transparent #fbfbfb;
+  display: block;
+  width: 0;
+  z-index: 1;
+  right: -25px;
+  top: 80px;
+}
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 9px 0 9px 27px;
+  border-color: transparent #684132;
+  display: block;
+  width: 0;
+  z-index: 0;
+  right: -30px;
+  top: 78px;
+}

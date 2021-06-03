@@ -63,7 +63,7 @@ function App() {
           {/* this is the nav bar */}
           <nav className="navbar navbar-expand-lg navbar-light">
             <a className="navbar-brand" href="/" className="navbar-link">
-              <img src="/static/img/recallama-icon.jpg" width="30" height="30" className="d-inline-block align-center" alt="" />
+              <img src="/static/img/cropped.png" width="30" height="30" className="d-inline-block align-center" alt="" />
               Recallama</a>
             <ul className="nav navbar-nav">
               <li className="nav-item px-3 navbar-dark"><Link to='/' className="navbar-link">Home</Link></li>
