@@ -48,9 +48,9 @@ function PostDrug(props) {
   const wasThereAnError = postDrugData['error'] !== null;
 
   if (wasThereAnError) {
-    return <div className='resultIndex'>
-      {postDrugData['error']['message']}
-    </div>
+    return <div className="individual-recall col-8 text-center">{postDrugData['error']['message']}</div>
+      
+    
   } else {
     return (
       <div className='resultIndex'>

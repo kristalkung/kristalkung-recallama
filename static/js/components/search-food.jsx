@@ -48,9 +48,7 @@ function PostResult(props) {
   const wasThereAnError = postResultData['error'] !== null;
 
   if (wasThereAnError) {
-    return <div className='resultIndex'>
-      {postResultData['error']['message']}
-    </div>
+    return <div className="individual-recall col-8 text-center">{postResultData['error']['message']}</div>
   } else {
     return (
       <div className='resultIndex'>
