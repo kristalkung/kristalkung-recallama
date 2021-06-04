@@ -118,14 +118,38 @@ def search_food_results():
         result['error'] = data['error']
     else:
         recall_list = data['results']
+        
 
         for recall in recall_list:
             input_recall_number = recall['recall_number']
             recall_obj = crud.get_food_recall_by_recall_number(input_recall_number)
 
-            obj_id = recall_obj.food_id
+            if recall_obj:
 
-            recall['food_id'] = obj_id
+                obj_id = recall_obj.food_id
+                recall['food_id'] = obj_id
+            else:
+
+                input_recall_number = recall['recall_number']
+                product_description = recall['product_description']
+                code_info = recall['code_info']
+                recalling_firm = recall['recalling_firm']
+                reason_for_recall = recall['reason_for_recall']
+                recall_initiation_date = recall['recall_initiation_date']
+                status = recall['status']
+                product_quantity = recall['product_quantity']
+                distribution_pattern = recall['distribution_pattern']
+                product_type = recall['product_type']
+                classification = recall['classification']
+
+                new_recall = crud.create_food_recall(input_recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status, product_quantity, distribution_pattern, product_type, classification)
+
+                print(f'***** input {input_recall_number}')
+                print(f"******* new recall : {new_recall}")
+                print(f"******* new recall obj: {recall_obj}")
+
+                obj_id = new_recall.food_id
+                recall['food_id'] = obj_id
 
         result['results'] = recall_list
         result['error'] = None
@@ -222,9 +246,28 @@ def search_drug_results():
             input_recall_number = recall['recall_number']
             recall_obj = crud.get_drug_recall_by_recall_number(input_recall_number)
 
-            obj_id = recall_obj.drug_id
+            if recall_obj:
+    
+                obj_id = recall_obj.drug_id
+                recall['drug_id'] = obj_id
+            else:
 
-            recall['drug_id'] = obj_id
+                input_recall_number = recall['recall_number']
+                product_description = recall['product_description']
+                code_info = recall['code_info']
+                recalling_firm = recall['recalling_firm']
+                reason_for_recall = recall['reason_for_recall']
+                recall_initiation_date = recall['recall_initiation_date']
+                status = recall['status']
+                product_quantity = recall['product_quantity']
+                distribution_pattern = recall['distribution_pattern']
+                product_type = recall['product_type']
+                classification = recall['classification']
+
+                new_recall = crud.create_drug_recall(input_recall_number, product_description, code_info, recalling_firm, reason_for_recall, recall_initiation_date, status, product_quantity, distribution_pattern, product_type, classification)
+
+                obj_id = new_recall.drug_id
+                recall['drug_id'] = obj_id
 
         result['results'] = recall_list
         result['error'] = None
