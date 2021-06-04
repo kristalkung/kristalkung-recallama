@@ -1,9 +1,9 @@
 "use strict";
 
-function WelcomeUser() {
-  if (window.user_id) return <h2>Welcome {window.user_name}!</h2>
-  else  return <h2> Welcome!</h2>
-}
+// function WelcomeUser() {
+//   if (window.user_id) return <h2>Welcome {window.user_name}!</h2>
+//   else  return <h2> Welcome!</h2>
+// }
 
 function PostResult(props) {
   const [postResultData, setPostResultData] = React.useState(null)
@@ -55,15 +55,17 @@ function PostResult(props) {
     return (
       <div className='resultIndex'>
         {postResultData['results'].map((result, index) => (
-          <div key={index}>
-            <h3> {result.recalling_firm}</h3>
-            <p>Report Date: {result.report_date}</p>
-            <p>Recall Number: {result.recall_number}</p>
-            <p>Description: {result.product_description}</p>
-            <p>Distribution pattern: {result.distribution_pattern}</p>
-            <p>Reason for recall: {result.reason_for_recall}</p>
-            <p>Status: {result.status}</p>
-            <Link to={'/food/' + result.food_id}>View Details</Link>
+          <div className="individual-recall col-8" key={index}>
+            <h3 className="text-center"> <b>{result.recalling_firm}</b> </h3>
+            <p className="recall-field"> <b>Report Date:</b> {result.report_date}</p>
+            <p className="recall-field"> <b>Recall Number:</b> {result.recall_number}</p>
+            <p className="recall-field"> <b>Description:</b> {result.product_description}</p>
+            <p className="recall-field"> <b>Distribution pattern:</b> {result.distribution_pattern}</p>
+            <p className="recall-field"> <b>Reason for recall:</b> {result.reason_for_recall}</p>
+            <p className="recall-field"> <b>Status:</b> {result.status}</p>
+            <div className="text-center">
+            <Link className="link-to" to={'/food/' + result.food_id}>View Details</Link>
+            </div>
           </div>))
         }
       </div>
@@ -109,21 +111,21 @@ function FoodSearchBar() {
 
 	return (
     <div>
-      <div className='search-bar-container'>
+      <div className='food-search-bar-container'>
         <form action='/api/food-results' onSubmit={(evt) => {handleSubmit(evt)}} method="POST">
           Food Description
-          <input value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
+          <input className="input-item" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
           <br/>
           
           Reason for Recall 
-          <input value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
+          <input className="input-item" value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
           <br/>
 
           Recalling Firm
-          <input value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text'>
+          <input className="input-item" value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text'>
           </input>
           <br/>
-          <button type="submit">Search</button>
+          <button className="btn btn-submit" type="submit">Search</button>
         </form>
       </div>
       <div className='post-result-container'>
@@ -138,9 +140,11 @@ function SearchFood() {
 
   return (
     <div> 
-      <WelcomeUser/>
-      <a href='/search/drug'>Click here to search for drug recalls</a>
-      <h3>Search for food recalls </h3>
+      {/* <WelcomeUser/> */}
+      <div className="text-right">
+        <a className="link-to" href='/search/drug'>Click here to search for drug recalls</a>
+      </div>
+      <h3 className="text-center">Search for food recalls </h3>
       <FoodSearchBar />
     </div>
   )  

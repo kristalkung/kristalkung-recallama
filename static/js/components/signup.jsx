@@ -69,16 +69,16 @@ function SignUp() {
       </h2>
       <form className='signUpForm' onSubmit={handleSignUp}>
         <div className="form-input">
-          <input className="input-item " value={fname} onChange={handleFNameChange} type="text" placeholder="First Name"></input>
+          <input className="input-item " value={fname} onChange={handleFNameChange} type="text" placeholder="First Name" required></input>
         </div>
         <div className="form-input">
-          <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name"></input>
+          <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name" required></input>
         </div>
         <div className="form-input">
-          <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email"></input>
+          <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email" required></input>
         </div>
         <div className="form-input">
-          <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password"></input>
+          <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password" required></input>
         </div>
 
 			  <button type="submit" className="btn btn-submit">Sign up</button>

@@ -66,7 +66,7 @@ function ViewFavorites() {
   }, [user_id])
 
   if (favorites === null) {
-    return <div>no data</div>;
+    return <div>You have no saved recalls</div>;
   }
 
   return (
@@ -77,9 +77,9 @@ function ViewFavorites() {
           <p>Description {result.description}</p>
           <p>My comment: {result.comment}</p>
           <p>favorite id: {result.favorite_id}</p>
-          <Link to={'/' + result.product_type + '/' + result.id}>View Details</Link>
+          <Link className="link-to" to={'/' + result.product_type + '/' + result.id}>View Details</Link>
           <br/>
-          <button type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
+          <button className="btn btn-submit" type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
 
         </div>
       ))
