@@ -110,6 +110,7 @@ function FoodSearchBar() {
 	return (
     <div>
       <div className='food-search-bar-container'>
+        <h3 className="searchbar-header text-center">Search for food recalls </h3>
         <form action='/api/food-results' onSubmit={(evt) => {handleSubmit(evt)}} method="POST">
           Food Description
           <input className="input-item" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
@@ -142,7 +143,7 @@ function SearchFood() {
       <div className="text-right">
         <a className="link-to" href='/search/drug'>Click here to search for drug recalls</a>
       </div>
-      <h3 className="searchbar-header text-center">Search for food recalls </h3>
+      
       <FoodSearchBar />
     </div>
   )  

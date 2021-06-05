@@ -123,7 +123,7 @@ a.link-to:hover {
   color: #69311C;
 }
 
-.individual-recall, .recallIndex {
+.individual-recall, .recallIndex, .not-logged-in {
   border-radius: 25px;
   background-color: rgba(238, 227, 224, 0.6);
   margin: auto;

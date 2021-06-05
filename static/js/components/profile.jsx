@@ -17,7 +17,7 @@ function ViewProfile() {
       )
     }
     
-    else return <h2> Please log in to view your profile.</h2>
+    else return <h4 className="not-logged-in col-4 text-center"> Please log in to view your profile.</h4>
   }
   
 function ViewFavorites() {
