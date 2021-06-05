@@ -1,7 +1,11 @@
 /* Modify background color of navbar */
 
 .navbar-light, .dropdown-menu, .dropdown-item:focus {
-  background-color: #785A49;
+  /* lighter bg for navbar */
+  background-color: #AB4A4A;
+
+  /* darker */
+  /* background-color: #543A2E; */
 }
 
 .dropdown-item:hover {
@@ -75,7 +79,7 @@ a.link-to:hover {
   width: 10;
   height: 130px;
   padding: 20px;
-  background: #fbfbfb;
+  background: #EBEAE9;
   border-radius: 22px;
   border: #684132 solid 3px;
   margin-top: 50px;
@@ -87,7 +91,7 @@ a.link-to:hover {
   position: absolute;
   border-style: solid;
   border-width: 7px 0 7px 25px;
-  border-color: transparent #fbfbfb;
+  border-color: transparent #EBEAE9;
   display: block;
   width: 0;
   z-index: 1;
@@ -130,4 +134,8 @@ a.link-to:hover {
 
 .recall-field {
   margin: 5px;
+}
+
+.searchbar-header {
+  color: #4D3A30;
 }

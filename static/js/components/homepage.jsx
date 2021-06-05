@@ -16,9 +16,9 @@ function Homepage() {
 					I can help you search for FDA recalls.
 				</div>
 				<div className="col-6 mascot">
-					<img src="static/img/recallama-bg.jpg"/>
+					<img src="static/img/recallama.png"/>
 				</div>
-				{/* <div className="col-3"> </div> */}
+				
 			</div>
 		</div>
 	  

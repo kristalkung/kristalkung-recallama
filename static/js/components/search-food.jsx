@@ -142,7 +142,7 @@ function SearchFood() {
       <div className="text-right">
         <a className="link-to" href='/search/drug'>Click here to search for drug recalls</a>
       </div>
-      <h3 className="text-center">Search for food recalls </h3>
+      <h3 className="searchbar-header text-center">Search for food recalls </h3>
       <FoodSearchBar />
     </div>
   )  
