@@ -171,6 +171,8 @@ def view_food_recall_info(food_id):
     reason_for_recall = food_recall.reason_for_recall, 
     recall_initiation_date = food_recall.recall_initiation_date, 
     status = food_recall.status
+    distribution_pattern = food_recall.distribution_pattern
+    classification = food_recall.classification
 
     food_dict['recall_number'] = recall_number[0]
     food_dict['product_description'] = product_description[0]
@@ -179,6 +181,8 @@ def view_food_recall_info(food_id):
     food_dict['reason_for_recall'] = reason_for_recall[0]
     food_dict['recall_initiation_date'] = recall_initiation_date[0]
     food_dict['status'] = status
+    food_dict['distribution_pattern'] = distribution_pattern
+    food_dict['classification'] = classification
 
     return jsonify(food_dict)
 
@@ -293,6 +297,8 @@ def view_drug_recall_info(drug_id):
     reason_for_recall = drug_recall.reason_for_recall, 
     recall_initiation_date = drug_recall.recall_initiation_date, 
     status = drug_recall.status
+    distribution_pattern = drug_recall.distribution_pattern
+    classification = drug_recall.classification
 
     drug_dict['recall_number'] = recall_number[0]
     drug_dict['product_description'] = product_description[0]
@@ -301,6 +307,8 @@ def view_drug_recall_info(drug_id):
     drug_dict['reason_for_recall'] = reason_for_recall[0]
     drug_dict['recall_initiation_date'] = recall_initiation_date[0]
     drug_dict['status'] = status
+    drug_dict['distribution_pattern'] = distribution_pattern
+    drug_dict['classification'] = classification
 
     return jsonify(drug_dict)
 

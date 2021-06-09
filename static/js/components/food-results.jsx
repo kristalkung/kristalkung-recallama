@@ -63,23 +63,30 @@ function FoodResults(props) {
   }
 
   return (
-    <div>
-      <div className='individualRecall'>
-        <h3> {recallData.recalling_firm}</h3>
-        <p>Report Date: {recallData.report_date}</p>
-        <p>Description: {recallData.product_description}</p>
-        <p>Distribution pattern: {recallData.distribution_pattern}</p>
-        <p>Reason for recall: {recallData.reason_for_recall}</p>
-        <p>Status: {recallData.status}</p>
+    <div className="recall-container container">
+      <div className="recall-item row">
+        <div className="col-3"></div>
+        <div className='recall-card col-6'>
+          <h3 className="recall-header text-center"> {recallData.recalling_firm}</h3>
+          <p> <b>Recall Initiation Date:</b> {recallData.recall_initiation_date}</p>
+          <p> <b>Description:</b> {recallData.product_description}</p>
+          <p> <b>Distribution pattern:</b> {recallData.distribution_pattern}</p>
+          <p> <b>Reason for recall:</b> {recallData.reason_for_recall}</p>
+          <p> <b>Status:</b> {recallData.status}</p>
+        </div>
+        <div className="save-recall col-3">
+          <form action='/save-food-to-profile' onSubmit={(evt) => handleSubmit(evt)} method='POST'>
+            Want to save this to your profile?
+            <br/>
+            
+            <textarea className="comment-box" name='comment' onChange={(e) => setComment(e.target.value)} placeholder="Add a comment"></textarea>
+            <button className=" btn btn-submit btn-sm">Save to Profile</button>
+          </form>
+          <br/>
+          <img className="email-icon" src='/static/img/gmail.png' />
+          <a className="link-to" href={`mailto:?subject=Check out this Food Recall from ${recallData.recalling_firm}&body=Hey! \nThought you might be interested in checking this out: http://localhost:5000/food/${food_id}`}>Send email</a>
+        </div>
       </div>
-      <form action='/save-food-to-profile' onSubmit={(evt) => handleSubmit(evt)} method='POST'>
-        Want to save this to your profile?
-        <br/>
-        Add a comment:
-        <input type='text' name='comment' onChange={(e) => setComment(e.target.value)}></input>
-        <button>Save to Profile</button>
-      </form>
-      <a href={`mailto:?subject=Check out this Food Recall from ${recallData.recalling_firm}&body=Hey! \nThought you might be interested in checking this out: http://localhost:5000/food/${food_id}`}>Send email</a>
     </div>
       
   )

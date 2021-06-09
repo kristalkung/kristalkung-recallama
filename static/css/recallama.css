@@ -67,7 +67,7 @@ body {
 }
 
 a.link-to:link, a.link-to:visited {
-  color: #88A981;
+  color: #579E48;
 }
 
 a.link-to:hover {
@@ -125,7 +125,7 @@ a.link-to:hover {
 
 .individual-recall, .recallIndex, .not-logged-in, .no-saved-recalls, .about-me-text {
   border-radius: 25px;
-  background-color: rgba(238, 227, 224, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
   margin: auto;
   margin-top: 10px;
   color: #4D3A30;
@@ -142,12 +142,12 @@ a.link-to:hover {
 
 .favorite-index-item {
   border-radius: 25px;
-  background-color: rgba(238, 227, 224, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
   margin: auto;
   margin-top: 20px;
   color: #4D3A30;
   padding: 5px;
-  /* display: inline-block; */
+  
 }
 
 .saved-recalls-text {
@@ -160,23 +160,57 @@ a.link-to:hover {
 }
 
 .about-me-pic {
-  height: 100%;
   width: 100%;
   border-radius: 50px;
 }
 
 .website-icon {
-  width: 32px;
-  margin-bottom: 5px;
+  width: 24px;
+  /* margin-bottom: 5px; */
   margin-left: 20px;
   margin-right: 5px;
 }
 
 .about-me-text {
   line-height: 150%;
+  margin: 0;
 }
 
 .about-me-header {
   color: #4D3A30;
   margin: 20px;
+}
+
+.recall-card {
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: auto;
+  margin-top: 10px;
+  color: #4D3A30;
+  padding: 20px;
+}
+
+.recall-header {
+  margin-bottom: 20px;
+}
+
+.save-recall {
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 10px;
+  color: #4D3A30;
+  padding: 10px;
+}
+
+.email-icon {
+  width: 24px;
+  margin-right: 5px;
+}
+
+.comment-box {
+  width: 100%;
+}
+
+.recall-container {
+  margin: 10;
 }
