@@ -17,6 +17,7 @@ app.secret_key = 'secret key'
 
 API_KEY = os.environ['OPENFDA_KEY']
 
+@app.route('/about-me')
 @app.route('/logout')
 @app.route('/profile')
 @app.route('/results')
@@ -231,8 +232,6 @@ def search_drug_results():
     complete_url = url + '?' + 'api_key=' + payload['api_key'] + '&search=' + payload['search'] + '&limit=' + payload['limit']
 
     data = requests.get(complete_url).json()
-
-    print(f"***** data {data}")
 
     result = {}
 

@@ -43,6 +43,7 @@ function App() {
                 </ul>
             </li>
             <li className="nav-item px-3 navbar-dark"><Link to='/profile' className="navbar-link">View my profile</Link></li>
+            <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
           </ul>
         </nav>
 		
@@ -54,6 +55,7 @@ function App() {
           <Route path='/search/drug'> <SearchDrug /> </Route>
 					<Route path='/food/:food_id'> <FoodResults /> </Route>
           <Route path='/drugs/:drug_id'> <DrugResults /> </Route>
+          <Route path='/about-me'> <AboutMe /> </Route>
 					<Route path='/'> <Homepage /> </Route>
 
 				</Switch>
@@ -85,6 +87,7 @@ function App() {
               </li>
               <li className="nav-item px-3 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
               <li className="nav-item px-3 navbar-dark"><Link to='/profile' className="navbar-link">View my profile</Link></li>
+              <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
             </ul>
           </nav>
       
@@ -97,6 +100,7 @@ function App() {
             <Route path='/search/drug'> <SearchDrug /> </Route>
             <Route path='/food/:food_id'> <FoodResults /> </Route>
             <Route path='/drugs/:drug_id'> <DrugResults /> </Route>
+            <Route path='/about-me'> <AboutMe /> </Route>
             <Route path='/'> <Homepage /> </Route>
   
           </Switch>

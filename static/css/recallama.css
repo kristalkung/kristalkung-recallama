@@ -123,7 +123,7 @@ a.link-to:hover {
   color: #69311C;
 }
 
-.individual-recall, .recallIndex, .not-logged-in {
+.individual-recall, .recallIndex, .not-logged-in, .no-saved-recalls, .about-me-text {
   border-radius: 25px;
   background-color: rgba(238, 227, 224, 0.6);
   margin: auto;
@@ -136,6 +136,47 @@ a.link-to:hover {
   margin: 5px;
 }
 
-.searchbar-header {
+.searchbar-header, .about-me-header {
   color: #4D3A30;
+}
+
+.favorite-index-item {
+  border-radius: 25px;
+  background-color: rgba(238, 227, 224, 0.6);
+  margin: auto;
+  margin-top: 20px;
+  color: #4D3A30;
+  padding: 5px;
+  /* display: inline-block; */
+}
+
+.saved-recalls-text {
+  color: #4D3A30;
+}
+
+.user-name-index {
+  color: #4D3A30;
+  margin: 20px;
+}
+
+.about-me-pic {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.website-icon {
+  width: 32px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.about-me-text {
+  line-height: 150%;
+}
+
+.about-me-header {
+  color: #4D3A30;
+  margin: 20px;
 }

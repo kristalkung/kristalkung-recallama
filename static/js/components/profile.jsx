@@ -6,10 +6,10 @@ function ViewProfile() {
     if (window.user_id & window.user_id != "null") {
       return (
         <div>
-          <h2>{window.user_name}</h2>
-          <div>
+          <h2 className="user-name-index text-center">{window.user_name}'s Saved Recalls</h2>
+          {/* <h5 className="saved-recalls-text col-6 text-center">
             Here are your saved recalls:
-          </div>
+          </h5> */}
           <div>
             <ViewFavorites />
           </div>
@@ -66,21 +66,20 @@ function ViewFavorites() {
   }, [user_id])
 
   if (favorites === null) {
-    return <div>You have no saved recalls</div>;
+    return <div className="no-saved-recalls text-center col-4">You have no saved recalls</div>;
   }
 
   return (
-    <div className='favoriteIndex'>
+    <div className='favoriteIndex text-center'>
       {favorites.map((result, index) => (
-        <div key={index}>
+        
+        <div className="favorite-index-item col-8" key={index}>
           <h3>{result.recalling_firm}</h3>
-          <p>Description {result.description}</p>
-          <p>My comment: {result.comment}</p>
-          <p>favorite id: {result.favorite_id}</p>
+          <p> <b>Description:</b> {result.description.slice(0, 100)}...</p>
+          <p> <b>My comment:</b>   {result.comment}</p>
           <Link className="link-to" to={'/' + result.product_type + '/' + result.id}>View Details</Link>
           <br/>
           <button className="btn btn-submit" type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
-
         </div>
       ))
       }
