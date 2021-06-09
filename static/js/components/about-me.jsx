@@ -28,9 +28,9 @@ function AboutMe() {
           <br />
           <br />
           
-          In my free time, I enjoy trying new recipes, eating at new restaurants, 
-          taking long walks on the beach, running in 60 degree weather, and 
-          finding the next best ice cream spot 🍦
+          In my free time, I enjoy cooking new recipes, eating at new restaurants, 
+          taking long walks on the beach, reading in a park, running in 60 degree 
+          weather, and finding the next best ice cream spot 🍦
 
           <br />
           <br />
