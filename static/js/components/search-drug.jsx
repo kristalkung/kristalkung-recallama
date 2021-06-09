@@ -114,18 +114,27 @@ function SearchBar() {
       <div className='drug-search-bar-container'>
         <h3 className="searchbar-header text-center">Search for drug recalls </h3>
         <form action='/api/drug-results' onSubmit={(evt) => {handleSubmit(evt)}} method="POST">
-          Drug Description
-          <input className="input-item" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
-          <br/>
-          
-          Reason for Recall 
-          <input className="input-item" value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
-          <br/>
-
-          Recalling Firm
-          <input className="input-item" value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text'>
-          </input>
-          <br/>
+          <div className="form-group row">
+            <div className="col-sm-1"></div>
+            <label for="description" className="col-sm-4 col-form-label px-0 text-left">Description</label>
+            <div className="col-sm-6">
+              <input className="input-item form-control" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-sm-1"></div>
+            <label for="description" className="col-sm-4 col-form-label text-left px-0">Reason for Recall</label>
+            <div className="col-sm-6">
+              <input className="input-item form-control" value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-sm-1"></div>
+            <label for="description" className="col-sm-4 col-form-label text-left px-0">Recalling Firm</label>
+            <div className="col-sm-6">
+              <input className="input-item form-control" value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text'></input>
+            </div>
+          </div>
           <button className="btn btn-submit" type="submit">Search</button>
         </form>
       </div>

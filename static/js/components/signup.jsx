@@ -37,6 +37,7 @@ function SignUp() {
         alert("This email has already been used. Please use a different email.")
       } else {
         console.log(data)
+        alert("Success! Please log in to continue.")
         history.push("/login")
         
         // redirects user to the login page
@@ -68,19 +69,30 @@ function SignUp() {
       Sign up for an Account 
       </h2>
       <form className='signUpForm' onSubmit={handleSignUp}>
-        <div className="form-input">
-          <input className="input-item " value={fname} onChange={handleFNameChange} type="text" placeholder="First Name" required></input>
+        <div className="form-group row">
+          <div className="col-sm-3"></div>
+          <div className="col-sm-6">
+            <input className="input-item form-control" value={fname} name="fname" onChange={handleFNameChange} type="text" placeholder="First Name" required></input>
+          </div>
         </div>
-        <div className="form-input">
-          <input className="input-item" value={lname} onChange={handleLNameChange} type="text" placeholder="Last Name" required></input>
+        <div className="form-group row">
+          <div className="col-sm-3"></div>
+          <div className="col-sm-6">
+            <input className="input-item form-control" value={lname} name="lname" onChange={handleLNameChange} type="text" placeholder="Last Name" required></input>
+          </div>
         </div>
-        <div className="form-input">
-          <input className="input-item" value={email} onChange={handleEmailChange} type="text" placeholder="Email" required></input>
-        </div>
-        <div className="form-input">
-          <input className="input-item" value={password} onChange={handlePasswordChange} type="email" placeholder="Password" required></input>
-        </div>
-
+        <div className="form-group row">
+            <div className="col-sm-3"></div>
+            <div className="col-sm-6">
+              <input className="input-item form-control" value={email} name="email" onChange={handleEmailChange} type="text" placeholder="email" required></input>
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-sm-3"></div>
+            <div className="col-sm-6">
+              <input className="input-item form-control" value={password} name="password" onChange={handlePasswordChange} type="password" placeholder="password" required></input>
+            </div>
+          </div>
 			  <button type="submit" className="btn btn-submit">Sign up</button>
 			</form>
       <br/>

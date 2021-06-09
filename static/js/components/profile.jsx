@@ -3,7 +3,7 @@
 
 function ViewProfile() {
 
-    if (window.user_id & window.user_id != "null") {
+    if (window.user_id) {
       return (
         <div>
           <h2 className="user-name-index text-center">{window.user_name}'s Saved Recalls</h2>
@@ -24,6 +24,7 @@ function ViewFavorites() {
   const [favorites, setFavorites] = React.useState(null);
 
   function HandleUnsave(favorite_id) {
+
   
     const data = {
       favorite_id,
@@ -68,22 +69,24 @@ function ViewFavorites() {
   if (favorites === null) {
     return <div className="no-saved-recalls text-center col-4">You have no saved recalls</div>;
   }
-
-  return (
-    <div className='favoriteIndex text-center'>
-      {favorites.map((result, index) => (
-        
-        <div className="favorite-index-item col-8" key={index}>
-          <h3>{result.recalling_firm}</h3>
-          <p> <b>Description:</b> {result.description.slice(0, 100)}...</p>
-          <p> <b>My comment:</b>   {result.comment}</p>
-          <Link className="link-to" to={'/' + result.product_type + '/' + result.id}>View Details</Link>
-          <br/>
-          <button className="btn btn-submit" type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
-        </div>
-      ))
-      }
-    </div>
-  )
+  else {
+    return (
+      <div className='favoriteIndex text-center'>
+        {favorites.map((result, index) => (
+          
+          <div className="favorite-index-item col-8" key={index}>
+            <h3>{result.recalling_firm}</h3>
+            <p> <b>Description:</b> {result.description.slice(0, 100)}...</p>
+            <p> <b>My comment:</b>   {result.comment}</p>
+            <Link className="link-to" to={'/' + result.product_type + '/' + result.id}>View Details</Link>
+            <br/>
+            <button className="btn btn-submit" type='submit' onClick={() => HandleUnsave(result.favorite_id)}>Unsave</button>
+          </div>
+        ))
+        }
+      </div>
+    )
+  }
+  
 }
 
