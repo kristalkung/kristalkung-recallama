@@ -18,10 +18,12 @@
   font-size: 15px;
 }
 
-
-
 .nav-item {
   text-align: left;
+}
+
+.recallama-brand-name {
+  margin: 10px;
 }
 
 .signup-form, .login-form, .logout-form {
@@ -164,7 +166,7 @@ a.link-to:hover {
 
 .about-me-pic {
   width: 100%;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .website-icon {

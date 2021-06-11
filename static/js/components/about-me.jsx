@@ -14,7 +14,7 @@ function AboutMe() {
           Hello! My name is Kristal. I am an analytical chemistry research associate working 
           in the alternative meat biotech industry and am looking to transition 
           into a software engineering role. My passion for the environment lead
-          me to where I am today and I am now working towards the next step in my career 🌱
+          me to where I am today and I am now working towards my next career move 🌱
           <br />
           <br />
 
