@@ -86,8 +86,6 @@ function App() {
                   <li><Link to="/search/drug" className="dropdown-item">Drug Recalls</Link></li>
                 </ul>
               </li>
-              
-              
               <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
             </ul>
           </nav>

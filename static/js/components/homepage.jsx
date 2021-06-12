@@ -15,9 +15,10 @@ function Homepage() {
 					Hello! I'm Recallama and <br/>
 					I can help you search for FDA drug and food recalls.
 				</div>
-				<div className="col-6 mascot">
+				<div className="col-4 mascot">
 					<img src="static/img/recallama.png"/>
 				</div>
+				
 				
 			</div>
 		</div>

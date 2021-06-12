@@ -19,13 +19,13 @@ function LogIn() {
         <div className="form-group row">
             <div className="col-sm-3"></div>
             <div className="col-sm-6">
-              <input className="input-item form-control" value={email} name="email" onChange={handleEmailChange} type="text" placeholder="email" required></input>
+              <input className="input-item form-control" value={email} name="email" onChange={handleEmailChange} type="text" placeholder="email" autocomplete="off" required></input>
             </div>
           </div>
           <div className="form-group row">
             <div className="col-sm-3"></div>
             <div className="col-sm-6">
-              <input className="input-item form-control" value={password} name="password" onChange={handlePasswordChange} type="password" placeholder="password" required></input>
+              <input className="input-item form-control" value={password} name="password" onChange={handlePasswordChange} type="password" placeholder="password" autocomplete="off" required></input>
             </div>
           </div>
 
