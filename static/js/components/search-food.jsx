@@ -148,11 +148,6 @@ function SearchFood() {
 
   return (
     <div> 
-      {/* <WelcomeUser/> */}
-      <div className="text-right">
-        <a className="link-to" href='/search/drug'>Click here to search for drug recalls</a>
-      </div>
-      
       <FoodSearchBar />
     </div>
   )  

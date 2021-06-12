@@ -77,7 +77,8 @@ function App() {
             <ul className="nav navbar-nav">
               <li className="nav-item px-3 navbar-dark"><Link to='/' className="navbar-link">Home</Link></li>
               <li className="nav-item px-0 navbar-dark"><Link to='/signup' className="navbar-link">Sign up</Link></li>
-              <li className="dropdown nav-item px-3 navbar-dark">
+              <li className="nav-item px-3 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
+              <li className="dropdown nav-item px-0 navbar-dark">
                 <Link to='#' className="navbar-link dropdown-toggle" data-toggle="dropdown" >Search
                 <span className="caret"></span></Link>
                 <ul className="dropdown-menu">
@@ -85,9 +86,9 @@ function App() {
                   <li><Link to="/search/drug" className="dropdown-item">Drug Recalls</Link></li>
                 </ul>
               </li>
-              <li className="nav-item px-0 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
-              <li className="nav-item px-3 navbar-dark"><Link to='/profile' className="navbar-link">View my profile</Link></li>
-              <li className="nav-item px-0 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
+              
+              
+              <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
             </ul>
           </nav>
       

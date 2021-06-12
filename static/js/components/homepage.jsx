@@ -5,7 +5,7 @@ function Homepage() {
 	return (
 		<div>
 			<div className="py-3 text-center">
-				<h1>
+				<h1 className="welcome-banner">
 					Welcome to Recallama
 				</h1>
 			</div>

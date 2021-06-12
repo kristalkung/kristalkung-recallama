@@ -148,12 +148,7 @@ function SearchBar() {
 function SearchDrug() {
 
   return (
-    <div> 
-      {/* <WelcomeUser/> */}
-      <div className="text-right">
-        <a className="link-to" href='/search/food'>Click here to search for food recalls</a>
-      </div>
-      
+    <div>
       <SearchBar />
     </div>
   )  

@@ -26,15 +26,19 @@
   margin: 10px;
 }
 
+.welcome-banner {
+  color: #4D3A30;
+}
+
 .signup-form, .login-form, .logout-form {
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: auto;
   margin-top: 50px;
   width: 500px;
   padding: 2rem;
-  color: #69311C;
+  color: #4D3A30;
 }
 
 .form-input {
@@ -114,10 +118,10 @@ a.link-to:hover {
   background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: auto;
-  /* margin-top: 10px; */
+  margin-top: 10px;
   width: 500px;
   padding: 1rem;
-  color: #69311C;
+  color: #4D3A30;
 }
 
 .individual-recall, .recallIndex, .not-logged-in, .no-saved-recalls, .about-me-text {
