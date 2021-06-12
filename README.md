@@ -13,17 +13,12 @@ Python, Flask, SQLAlchemy, PostgreSQL, React Hooks, HTML/CSS, Bootstrap, openFDA
 
 ## How to run Recallama locally
 - Clone this repository
-- Install the requirements using:
-  - ```pip3 install -r requirements.txt ```
+- Install the requirements using: ```pip3 install -r requirements.txt ```
 - Get an API key from [openFDA authentication](https://open.fda.gov/apis/authentication/)
-- Create a secrets.sh file and include your openFDA API key in it like this:
-  - ```export OPENFDA_KEY="[your-key-goes-here]"```
+- Create a secrets.sh file and include your openFDA API key in it like this: ```export OPENFDA_KEY="[your-key-goes-here]"```
 - Add secrets.sh to .gitignore
-- Load the API key to the shell environment once in the terminal with:
-  - ```source secrets.sh```
-- Seed the database by typing this into the terminal:
-  - ```python3.8 seed_database.py```
-- Load the website using:
-  - ```python3.8 server.py```
+- Load the API key to the shell environment once in the terminal with: ```source secrets.sh```
+- Seed the database by typing this into the terminal: ```python3.8 seed_database.py```
+- Load the website using: ```python3.8 server.py```
 - On the browser, search [localhost:5000/](localhost:5000/)
 
