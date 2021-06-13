@@ -116,21 +116,21 @@ function FoodSearchBar() {
             <div className="col-sm-1"></div>
             <label for="description" className="col-sm-4 col-form-label px-0 text-left">Description</label>
             <div className="col-sm-6">
-              <input className="input-item form-control" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text'></input>
+              <input className="input-item form-control" value={description} name="description" onChange={(e) => setDescription(e.target.value)} type='text' autocomplete="off"></input>
             </div>
           </div>
           <div className="form-group row">
             <div className="col-sm-1"></div>
             <label for="description" className="col-sm-4 col-form-label text-left px-0">Reason for Recall</label>
             <div className="col-sm-6">
-              <input className="input-item form-control" value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text'></input>
+              <input className="input-item form-control" value={reasonForRecall} name="reason-for-recall" onChange={(e) => setReasonForRecall(e.target.value)} type='text' autocomplete="off"></input>
             </div>
           </div>
           <div className="form-group row">
             <div className="col-sm-1"></div>
             <label for="description" className="col-sm-4 col-form-label text-left px-0">Recalling Firm</label>
             <div className="col-sm-6">
-              <input className="input-item form-control" value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text'></input>
+              <input className="input-item form-control" value={recallingFirm} name="recalling-firm" onChange={(e) => setRecallingFirm(e.target.value)} type='text' autocomplete="off"></input>
             </div>
           </div>
           <button className="btn btn-submit" type="submit">Search</button>

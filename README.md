@@ -12,7 +12,7 @@ With Recallama, you will be able to search, save, and share all FDA drug and foo
 
 ## Technologies used
 
-Python, Flask, SQLAlchemy, PostgreSQL, React Hooks, HTML/CSS, Bootstrap, openFDA API
+Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React Hooks, HTML/CSS, Bootstrap, openFDA API
 
 ## How to run Recallama locally
 
