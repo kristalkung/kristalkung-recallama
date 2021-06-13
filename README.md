@@ -31,18 +31,28 @@ Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React Hooks, HTML/CSS, Bootst
 
 On the search option on the navigation bar, users may click on Drug Recalls or Food Recalls to take you to the search page. Users can fill in at least one field in the search form to see results. On submission, a fetch is made to retrieve the information requested. On the backend, the server will call the openFDA API and return the results.
 
+![search](https://media.giphy.com/media/fZNVwBaLUDPLRykUhi/giphy.gif)
+
 ### Other Features
 
-- New users may sign up for an account
-- Users may log in
+- Users may sign up for an account and log in
+
+![sign up log in](https://media.giphy.com/media/92Jy08QdUz6OZRX25k/giphy.gif)
+
 - User profiles list out all saved recalls
 - Users may save and unsave recalls to their profile
+
+![save](https://media.giphy.com/media/XjY9eHcSpbexGglAmU/giphy.gif)
+
 - Recalls may be shared via HTML email tag
+
+![email](https://media.giphy.com/media/PAEGxIyhzC3a06b6jK/giphy.gif)
 
 ## About the Developer
 
 Kristal is a research associate in the alternative meat biotech industry. Her passion for the environment led her to where she is today and she is now working towards her next career move. The challenges for software engineering excite her and she believes transitioning to software engineering will allow her to make an even greater impact on the world.
 
 Follow her journey on:
+
 - [LinkedIn](https://linkedin.com/in/kristal-kung)
 - [Github](https://github.com/kristalkung)
