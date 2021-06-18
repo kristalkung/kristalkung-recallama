@@ -11,7 +11,7 @@ function AboutMe() {
         </div>
         <div className="about-me-text col-4">
         
-          Hello! My name is Kristal. I am an senior research associate working 
+          Hello! My name is Kristal. I am a senior research associate working 
           in the alternative meat biotech industry and am looking to transition 
           into a software engineering role. My passion for the environment lead
           me to where I am today and I am now working towards my next career move 🌱
