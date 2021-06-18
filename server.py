@@ -42,7 +42,7 @@ def login():
     if user and user.password == input_password:
         session['user'] = user.user_id
         session['user_name'] = f'{user.fname} {user.lname}'
-        return redirect('/profile')
+        return redirect('/search/food')
     
     else:
         flash('incorrect login')

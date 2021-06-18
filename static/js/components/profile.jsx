@@ -7,9 +7,7 @@ function ViewProfile() {
       return (
         <div>
           <h2 className="user-name-index text-center">{window.user_name}'s Saved Recalls</h2>
-          {/* <h5 className="saved-recalls-text col-6 text-center">
-            Here are your saved recalls:
-          </h5> */}
+
           <div>
             <ViewFavorites />
           </div>
@@ -30,7 +28,6 @@ function ViewFavorites() {
       favorite_id,
       
     }
-    console.log(favorite_id)
     const options = {
       method: 'POST',
       headers: {
@@ -49,10 +46,6 @@ function ViewFavorites() {
   }
   
   React.useEffect(() => {
-
-    const data = {
-      user_id
-    };
 
     const options = {
       method: 'GET'

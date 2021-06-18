@@ -5,6 +5,7 @@ function FoodResults(props) {
 
   const [recallData, setRecallData] = React.useState(null);
   const [ comment, setComment ] = React.useState("")
+  const [ saveButton, setSaveButton ] = React.useState(false);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -26,6 +27,7 @@ function FoodResults(props) {
     .then(data => {
       if (data === "favorite added") {
         alert('This recall was added to your profile!')
+        setSaveButton(true);
       }
       else {
         alert('Please log in to save this recall to your profile')
@@ -80,7 +82,7 @@ function FoodResults(props) {
             <br/>
             
             <textarea className="comment-box" name='comment' onChange={(e) => setComment(e.target.value)} placeholder="Add a comment"></textarea>
-            <button className=" btn btn-submit btn-sm">Save to Profile</button>
+            <button className=" btn btn-submit btn-sm" disabled={saveButton}>Save to Profile</button>
           </form>
           <br/>
           <img className="email-icon" src='/static/img/gmail.png' />
