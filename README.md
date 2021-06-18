@@ -6,12 +6,12 @@ Enter: Recallama. With Recallama, users will be able to search, save, and share 
 
 ## Table of Contents
 
-- Technologies Used
-- How to Run Recallama Locally
-- Features
-- Challenges I Faced
-- Next Steps
-- About the Developer
+- [Technologies Used](https://github.com/kristalkung/kristalkung-recallama#technologies-used)
+- [How to Run Recallama Locally](https://github.com/kristalkung/kristalkung-recallama#how-to-run-recallama-locally)
+- [Features](https://github.com/kristalkung/kristalkung-recallama#reatures)
+- [Challenges I Faced](https://github.com/kristalkung/kristalkung-recallama#challenges-i-face)
+- [Next Steps](https://github.com/kristalkung/kristalkung-recallama#next-steps)
+- [About the Developer](https://github.com/kristalkung/kristalkung-recallama#about-the-developer)
 
 ## Technologies Used
 
