@@ -26,7 +26,6 @@ function FoodResults(props) {
     .then(response => response.json())
     .then(data => {
       if (data === "favorite added") {
-        alert('This recall was added to your profile!')
         setSaveButton(true);
       }
       else {

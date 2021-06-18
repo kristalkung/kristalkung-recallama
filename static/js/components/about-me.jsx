@@ -13,14 +13,14 @@ function AboutMe() {
         
           Hello! My name is Kristal. I am a senior research associate working 
           in the alternative meat biotech industry and am looking to transition 
-          into a software engineering role. My passion for the environment lead
+          into a software engineering role. My passion for the environment led
           me to where I am today and I am now working towards my next career move 🌱
           <br />
           <br />
 
           I really enjoy the challenges of programming and love making my ideas 
           come to life. The problem solving aspect keeps me on my toes and I like 
-          how the industry is constantly evolving to fit needs of world. A core 
+          how the industry is constantly evolving to fit the needs of the world. A core 
           value of mine is to live while positively impacting the world. I believe 
           that stepping into software engineering will help me reach a wider audience 
           to fulfill that value 🌎
