@@ -4,7 +4,7 @@ function FoodResults(props) {
   let {food_id}  = useParams();
 
   const [recallData, setRecallData] = React.useState(null);
-  const [ comment, setComment ] = React.useState("")
+  const [ comment, setComment ] = React.useState("");
   const [ saveButton, setSaveButton ] = React.useState(false);
 
   const handleSubmit = (evt) => {
