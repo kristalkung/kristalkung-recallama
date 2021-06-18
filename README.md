@@ -1,21 +1,21 @@
 # Recallama: Search for an FDA drug and food recall
 
-Every now and then we hear about a food recall from a big name company or commonly used produce, but how are we supposed to find out about things that aren't as commonly consumed? How can we find more information about it? Enter: Recallama.
+Every now and then we hear about a food recall from a big name company or commonly used produce, but how are we supposed to find out about things that aren't as commonly consumed? How can we find more information about it?
 
-With Recallama, you will be able to search, save, and share all FDA drug and food recalls.
+Enter: Recallama. With Recallama, users will be able to search, save, and share all FDA drug and food recalls.
 
 ## Table of Contents
 
 - Technologies used
 - How to run Recallama locally
 - Features
-- Challenges
+- Challenges I faced
 - Next Steps
 - About the Developer
 
 ## Technologies used
 
-Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React Hooks, HTML/CSS, Bootstrap, openFDA API
+Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React, HTML/CSS, Bootstrap, openFDA API
 
 ## How to run Recallama locally
 
@@ -34,7 +34,7 @@ Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React Hooks, HTML/CSS, Bootst
 
 ### Search for drug and food recalls
 
-On the search option in the navigation bar, users may click on Drug Recalls or Food Recalls to take you to the search page. Users can fill in at least one field in the search form to see results. On submission, a fetch is made to retrieve the information requested. On the backend, the server will call the openFDA API and return the results.
+On the search option in the navigation bar, users may click on Drug Recalls or Food Recalls to take you to the search page. Users can fill in at least one field in the search form to see results. On submission, a fetch is made to retrieve the information requested. On the backend, the server will call the openFDA API and return the results. New searches will make another API call on the server and the results component will re-render.
 
 ![search](https://media.giphy.com/media/fZNVwBaLUDPLRykUhi/giphy.gif)
 
@@ -56,9 +56,13 @@ What's the point of having knowledge if that knowledge cannot be shared? I inclu
 
 ![email](https://media.giphy.com/media/PAEGxIyhzC3a06b6jK/giphy.gif)
 
-## Challenges
+## Challenges I faced
 
+After a two-week introduction to Javascript and React, I began this nine-week project in my part time software engineering program at Hackbright Academy. I taught myself React and I faced a lot of hurdles along the way.
 
+My biggest challenge was completing my search page. I wanted to display the results of the initial search as well as the results of any new searches made. I spent a couple weeks learning about how I could use a fetch to get the results of my API call and how I could use state to keep track of any searches that were made.
+
+Another challenge was getting the API call on the server to get the results from my search input. I initially used ``` requests.get(url, params={key: value}) ``` for the API call, but had realized that this returned an error describing the request as an invalid search query. I read up on the openFDA API docs and experimented with different ways of making my API calls such that it satisfied a valid query syntax. I learned a lot about finding out what happens on my server when I’m making an API call, what is returned, and how that information is being passed to the front end.
 
 ## Next Steps
 
