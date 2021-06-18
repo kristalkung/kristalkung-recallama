@@ -6,18 +6,18 @@ Enter: Recallama. With Recallama, users will be able to search, save, and share 
 
 ## Table of Contents
 
-- Technologies used
-- How to run Recallama locally
+- Technologies Used
+- How to Run Recallama Locally
 - Features
-- Challenges I faced
+- Challenges I Faced
 - Next Steps
 - About the Developer
 
-## Technologies used
+## Technologies Used
 
 Python, Flask, SQLAlchemy, PostgreSQL, Javascript, React, HTML/CSS, Bootstrap, openFDA API
 
-## How to run Recallama locally
+## How to Run Recallama Locally
 
 - Clone this repository
 - Install the requirements using: ```pip3 install -r requirements.txt```
@@ -56,7 +56,7 @@ What's the point of having knowledge if that knowledge cannot be shared? I inclu
 
 ![email](https://media.giphy.com/media/PAEGxIyhzC3a06b6jK/giphy.gif)
 
-## Challenges I faced
+## Challenges I Faced
 
 After a two-week introduction to Javascript and React, I began this nine-week project in my part time software engineering program at Hackbright Academy. I taught myself React and I faced a lot of hurdles along the way.
 
