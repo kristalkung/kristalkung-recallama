@@ -86,7 +86,7 @@ function DrugResults(props) {
           </form>
           <br/>
           <img className="email-icon" src='/static/img/gmail.png' />
-          <a className="link-to" href={`mailto:?subject=Check out this Drug Recall from ${recallData.recalling_firm}&body=Hey! \nThought you might be interested in checking this out: http://localhost:5000/drug/${drug_id}`}>Send email</a>
+          <a className="link-to" href={`mailto:?subject=Check out this Drug Recall from ${recallData.recalling_firm}&body=Hey! \nThought you might be interested in checking this out: http://recallama.com/drug/${drug_id}`}>Send email</a>
         </div>
       </div>
 
