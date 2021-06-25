@@ -483,3 +483,302 @@ WHERE foods.recall_number = %(recall_number_1)s
 127.0.0.1 - - [24/Jun/2021 22:43:04] "[33mGET /admin/config.php HTTP/1.0[0m" 404 -
 127.0.0.1 - - [24/Jun/2021 23:33:22] "[37mGET / HTTP/1.0[0m" 200 -
 127.0.0.1 - - [25/Jun/2021 00:13:43] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/css/recallama.css HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/login.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/homepage.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/search-food.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/signup.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[37mGET /static/js/components/logout.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[37mGET /static/js/components/drug-results.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/profile.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/search-drug.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/components/about-me.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[37mGET /static/js/components/food-results.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[36mGET /static/js/root.jsx HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:38:59] "[37mGET /static/img/unsplash.jpg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:39:00] "[36mGET /static/img/recallama.png HTTP/1.0[0m" 304 -
+127.0.0.1 - - [25/Jun/2021 00:39:00] "[36mGET /static/img/cropped.png HTTP/1.0[0m" 304 -
+2021-06-25 00:39:04,644 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2021-06-25 00:39:04,648 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,648 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2793-2015', 'param_1': 1}
+2021-06-25 00:39:04,693 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,694 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2813-2015', 'param_1': 1}
+2021-06-25 00:39:04,695 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,695 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2797-2015', 'param_1': 1}
+2021-06-25 00:39:04,697 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,697 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2807-2015', 'param_1': 1}
+2021-06-25 00:39:04,699 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,699 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2794-2015', 'param_1': 1}
+2021-06-25 00:39:04,702 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,702 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2805-2015', 'param_1': 1}
+2021-06-25 00:39:04,704 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,704 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2800-2015', 'param_1': 1}
+2021-06-25 00:39:04,706 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,706 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2801-2015', 'param_1': 1}
+2021-06-25 00:39:04,708 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,708 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2799-2015', 'param_1': 1}
+2021-06-25 00:39:04,710 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,710 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2803-2015', 'param_1': 1}
+2021-06-25 00:39:04,711 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,711 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2795-2015', 'param_1': 1}
+2021-06-25 00:39:04,712 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,712 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2814-2015', 'param_1': 1}
+2021-06-25 00:39:04,714 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,714 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2812-2015', 'param_1': 1}
+2021-06-25 00:39:04,717 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,717 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2792-2015', 'param_1': 1}
+2021-06-25 00:39:04,718 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,718 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2796-2015', 'param_1': 1}
+2021-06-25 00:39:04,720 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,720 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2804-2015', 'param_1': 1}
+2021-06-25 00:39:04,723 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,723 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2791-2015', 'param_1': 1}
+2021-06-25 00:39:04,724 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,725 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2811-2015', 'param_1': 1}
+2021-06-25 00:39:04,727 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,727 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2806-2015', 'param_1': 1}
+2021-06-25 00:39:04,729 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,730 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2808-2015', 'param_1': 1}
+2021-06-25 00:39:04,732 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,732 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2809-2015', 'param_1': 1}
+2021-06-25 00:39:04,734 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,734 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2810-2015', 'param_1': 1}
+2021-06-25 00:39:04,736 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,736 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2802-2015', 'param_1': 1}
+2021-06-25 00:39:04,738 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:04,738 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2798-2015', 'param_1': 1}
+2021-06-25 00:39:04,739 INFO sqlalchemy.engine.base.Engine ROLLBACK
+127.0.0.1 - - [25/Jun/2021 00:39:04] "[37mPOST /api/food-results HTTP/1.0[0m" 200 -
+2021-06-25 00:39:05,086 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2021-06-25 00:39:05,086 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,086 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2793-2015', 'param_1': 1}
+2021-06-25 00:39:05,090 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,090 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2813-2015', 'param_1': 1}
+2021-06-25 00:39:05,091 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,091 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2797-2015', 'param_1': 1}
+2021-06-25 00:39:05,093 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,093 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2807-2015', 'param_1': 1}
+2021-06-25 00:39:05,095 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,095 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2794-2015', 'param_1': 1}
+2021-06-25 00:39:05,098 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,098 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2805-2015', 'param_1': 1}
+2021-06-25 00:39:05,099 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,100 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2800-2015', 'param_1': 1}
+2021-06-25 00:39:05,102 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,102 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2801-2015', 'param_1': 1}
+2021-06-25 00:39:05,104 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,104 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2799-2015', 'param_1': 1}
+2021-06-25 00:39:05,106 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,106 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2803-2015', 'param_1': 1}
+2021-06-25 00:39:05,107 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,107 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2795-2015', 'param_1': 1}
+2021-06-25 00:39:05,108 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,108 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2814-2015', 'param_1': 1}
+2021-06-25 00:39:05,109 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,110 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2812-2015', 'param_1': 1}
+2021-06-25 00:39:05,113 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,113 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2792-2015', 'param_1': 1}
+2021-06-25 00:39:05,114 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,114 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2796-2015', 'param_1': 1}
+2021-06-25 00:39:05,116 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,116 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2804-2015', 'param_1': 1}
+2021-06-25 00:39:05,119 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,119 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2791-2015', 'param_1': 1}
+2021-06-25 00:39:05,120 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,121 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2811-2015', 'param_1': 1}
+2021-06-25 00:39:05,123 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,123 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2806-2015', 'param_1': 1}
+2021-06-25 00:39:05,125 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,125 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2808-2015', 'param_1': 1}
+2021-06-25 00:39:05,128 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,128 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2809-2015', 'param_1': 1}
+2021-06-25 00:39:05,130 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,130 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2810-2015', 'param_1': 1}
+2021-06-25 00:39:05,132 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,132 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2802-2015', 'param_1': 1}
+2021-06-25 00:39:05,134 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.recall_number = %(recall_number_1)s 
+ LIMIT %(param_1)s
+2021-06-25 00:39:05,134 INFO sqlalchemy.engine.base.Engine {'recall_number_1': 'F-2798-2015', 'param_1': 1}
+2021-06-25 00:39:05,135 INFO sqlalchemy.engine.base.Engine ROLLBACK
+127.0.0.1 - - [25/Jun/2021 00:39:05] "[37mPOST /api/food-results HTTP/1.0[0m" 200 -
+2021-06-25 00:39:06,380 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2021-06-25 00:39:06,380 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.food_id = %(param_1)s
+2021-06-25 00:39:06,380 INFO sqlalchemy.engine.base.Engine {'param_1': '11756'}
+2021-06-25 00:39:06,383 INFO sqlalchemy.engine.base.Engine ROLLBACK
+127.0.0.1 - - [25/Jun/2021 00:39:06] "[37mPOST /api/food/11756 HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:39:06] "[37mGET /static/img/gmail.png HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:39:13] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:39:37] "[37mGET /food/11756 HTTP/1.0[0m" 200 -
+2021-06-25 00:39:37,805 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2021-06-25 00:39:37,805 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.food_id = %(param_1)s
+2021-06-25 00:39:37,805 INFO sqlalchemy.engine.base.Engine {'param_1': '11756'}
+2021-06-25 00:39:37,806 INFO sqlalchemy.engine.base.Engine ROLLBACK
+127.0.0.1 - - [25/Jun/2021 00:39:37] "[37mPOST /api/food/11756 HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:39:42] "[37mGET /food/11756 HTTP/1.0[0m" 200 -
+2021-06-25 00:39:42,476 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2021-06-25 00:39:42,476 INFO sqlalchemy.engine.base.Engine SELECT foods.food_id AS foods_food_id, foods.recall_number AS foods_recall_number, foods.product_description AS foods_product_description, foods.code_info AS foods_code_info, foods.recalling_firm AS foods_recalling_firm, foods.reason_for_recall AS foods_reason_for_recall, foods.recall_initiation_date AS foods_recall_initiation_date, foods.status AS foods_status, foods.product_quantity AS foods_product_quantity, foods.distribution_pattern AS foods_distribution_pattern, foods.product_type AS foods_product_type, foods.classification AS foods_classification 
+FROM foods 
+WHERE foods.food_id = %(param_1)s
+2021-06-25 00:39:42,476 INFO sqlalchemy.engine.base.Engine {'param_1': '11756'}
+2021-06-25 00:39:42,477 INFO sqlalchemy.engine.base.Engine ROLLBACK
+127.0.0.1 - - [25/Jun/2021 00:39:42] "[37mPOST /api/food/11756 HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:42:42] "[33mGET /admin/config.php HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 00:50:20] "[33mGET /robots.txt HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 00:50:20] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:54:34] "[33mGET /.env HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 00:54:34] "[31m[1mPOST / HTTP/1.0[0m" 405 -
+127.0.0.1 - - [25/Jun/2021 00:56:13] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 00:58:31] "[33mGET /.env HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 00:58:32] "[31m[1mPOST / HTTP/1.0[0m" 405 -
+127.0.0.1 - - [25/Jun/2021 01:07:52] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [25/Jun/2021 01:38:56] "[33mPOST /boaform/admin/formLogin HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 02:29:35] "[33mGET /panel/admin.php HTTP/1.0[0m" 404 -
+127.0.0.1 - - [25/Jun/2021 02:29:47] "[37mGET / HTTP/1.0[0m" 200 -
