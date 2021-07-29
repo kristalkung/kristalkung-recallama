@@ -3,6 +3,8 @@
 // const { useReducer } = require("react");
 
 // const { useEffect } = require("react");
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 
 const Router = ReactRouterDOM.BrowserRouter;
 const Route = ReactRouterDOM.Route;
