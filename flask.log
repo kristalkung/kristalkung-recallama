@@ -17539,3 +17539,50 @@ Connected to the db!
 127.0.0.1 - - [02/Aug/2021 06:22:32] "[33mGET /.env HTTP/1.0[0m" 404 -
 127.0.0.1 - - [02/Aug/2021 06:22:33] "[31m[1mPOST / HTTP/1.0[0m" 405 -
 127.0.0.1 - - [02/Aug/2021 06:49:19] "[37mGET / HTTP/1.0[0m" 200 -
+Connected to the db!
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [02/Aug/2021 21:04:52] "[37mGET / HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/css/recallama.css HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/homepage.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/login.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/profile.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/signup.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/search-drug.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/logout.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/search-food.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/food-results.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/about-me.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/root.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/js/components/drug-results.jsx HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/img/unsplash.jpg HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/img/cropped.png HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[37mGET /static/img/recallama.png HTTP/1.0[0m" 200 -
+127.0.0.1 - - [02/Aug/2021 21:04:53] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+[2021-08-02 21:05:03,507] ERROR in app: Exception on /api/logout [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 63, in logout
+    del session['user']
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/werkzeug/local.py", line 353, in __delitem__
+    del self._get_current_object()[key]
+  File "/home/ubuntu/kristalkung-recallama/env/lib/python3.8/site-packages/werkzeug/datastructures.py", line 251, in oncall
+    rv = getattr(super(UpdateDictMixin, self), name)(*args, **kw)
+KeyError: 'user'
+127.0.0.1 - - [02/Aug/2021 21:05:03] "[35m[1mPOST /api/logout HTTP/1.0[0m" 500 -
+127.0.0.1 - - [02/Aug/2021 21:33:55] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
