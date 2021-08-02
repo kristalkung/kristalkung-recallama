@@ -27,7 +27,7 @@ function LogOut() {
     .then(response => response.json())
     .then(data => {
       if (data === "log out successful") {
-        history.push('/')
+        history.go('0')
   
       }
       else {
