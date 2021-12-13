@@ -32,11 +32,11 @@ function App() {
         <nav className="navbar navbar-expand-lg navbar-light">
           <a className="navbar-brand" href="/" className="navbar-link">
             <img src="/static/img/cropped.png" width="30" height="30" className="d-inline-block align-center" alt="" />
-            Recallama</a>
+            <img src="/static/img/recallama-navbar.png" width="100" height="30" className="d-inline-block align-center" alt="" />
+          </a>
           <ul className="nav navbar-nav">
-            <li className="nav-item px-3 navbar-dark"><Link to='/' className="navbar-link">Home</Link></li>
-            <li className="nav-item navbar-dark"> <Link to='/logout' className="navbar-link">Logout</Link></li>
-            <li className="dropdown nav-item px-3 navbar-dark">
+            <li className="nav-item px-3 navbar-dark"> <Link to='/logout' className="navbar-link">Logout</Link></li>
+            <li className="dropdown nav-item px-0 navbar-dark">
                 <Link to='#' className="navbar-link dropdown-toggle" data-toggle="dropdown" >Search
                 <span className="caret"></span></Link>
                 <ul className="dropdown-menu">
@@ -44,8 +44,8 @@ function App() {
                   <li><Link to="/search/drug" className="dropdown-item">Drug Recalls</Link></li>
                 </ul>
             </li>
-            <li className="nav-item navbar-dark"><Link to='/profile' className="navbar-link">View my profile</Link></li>
-            <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
+            <li className="nav-item navbar-dark px-3"><Link to='/profile' className="navbar-link">View my profile</Link></li>
+            <li className="nav-item px-0 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
           </ul>
         </nav>
 		
@@ -75,12 +75,12 @@ function App() {
           <nav className="navbar navbar-expand-lg navbar-light">
             <a className="recallama-brand-name navbar-brand" href="/" className="navbar-link">
               <img src="/static/img/cropped.png" width="30" height="30" className="d-inline-block align-center" alt="" />
-              Recallama</a>
+              <img src="/static/img/recallama-navbar.png" width="100" height="30" className="d-inline-block align-center" alt="" />  
+            </a>
             <ul className="nav navbar-nav">
-              <li className="nav-item px-3 navbar-dark"><Link to='/' className="navbar-link">Home</Link></li>
-              <li className="nav-item px-0 navbar-dark"><Link to='/signup' className="navbar-link">Sign up</Link></li>
-              <li className="nav-item px-3 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
-              <li className="dropdown nav-item px-0 navbar-dark">
+              <li className="nav-item px-3 navbar-dark"><Link to='/signup' className="navbar-link">Sign up</Link></li>
+              <li className="nav-item px-0 navbar-dark"><Link to='/login' className="navbar-link">Login</Link></li>
+              <li className="dropdown nav-item px-3 navbar-dark">
                 <Link to='#' className="navbar-link dropdown-toggle" data-toggle="dropdown" >Search
                 <span className="caret"></span></Link>
                 <ul className="dropdown-menu">
@@ -88,7 +88,7 @@ function App() {
                   <li><Link to="/search/drug" className="dropdown-item">Drug Recalls</Link></li>
                 </ul>
               </li>
-              <li className="nav-item px-3 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
+              <li className="nav-item px-0 navbar-dark"> <Link to='/about-me' className="navbar-link">About Me</Link></li>
             </ul>
           </nav>
       

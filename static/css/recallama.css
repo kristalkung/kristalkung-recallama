@@ -2,7 +2,7 @@
 
 .navbar-light, .dropdown-menu, .dropdown-item:focus {
   /* lighter bg for navbar */
-  background-color: #AB4A4A;
+  background-color: #3C0400;
 
   /* darker */
   /* background-color: #543A2E; */
@@ -30,6 +30,15 @@
   color: #4D3A30;
 }
 
+.welcome {
+  
+  height: 200px;
+}
+
+.homepage-logo {
+  padding-top: 150px;
+}
+
 .signup-form, .login-form, .logout-form {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.6);
@@ -54,8 +63,8 @@
 }
 
 .btn-submit {
-  background-color: #FD9169;
-  outline-color: #FD9169;
+  background-color: #EE6023;
+  outline-color: #EE6023;
   color: #FFEEE8;
   border-radius: 12px;
   margin-top: 2px;
@@ -126,7 +135,7 @@ a.link-to:hover {
 
 .individual-recall, .recallIndex, .not-logged-in, .no-saved-recalls, .about-me-text {
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   margin: auto;
   margin-top: 10px;
   color: #4D3A30;
@@ -225,6 +234,7 @@ a.link-to:hover {
 }
 
 body {
-  background-image: url("/static/img/unsplash.jpg");
+  background-image: url("/static/img/background.png");
+  /* background-image: url("/static/img/unsplash.jpg"); */
   background-size: 100%;
 }

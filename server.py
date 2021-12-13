@@ -332,7 +332,7 @@ def save_drug_recall_to_profile():
 @app.route('/api/profile/<user_id>', methods=['GET'])
 def view_favorites(user_id):
     """View a user's favorites(saved recalls)"""
-
+    print('*****hi*****')
     obj_list = crud.get_all_favorites_by_user(user_id)
     
     fav_list = []
@@ -377,6 +377,7 @@ def view_favorites(user_id):
         
         fav_list.append(fav_dict)
     
+    print(f'fav list: {fav_list}')
     return jsonify(fav_list)
 
 
@@ -407,4 +408,5 @@ def view_profile_for_logged_in_users():
 
 if __name__ == '__main__':
     connect_to_db(app)
-    app.run()
+    app.run(host='0.0.0.0', debug=True)
+    # app.run()

@@ -50,7 +50,7 @@ function ViewFavorites() {
     const options = {
       method: 'GET'
     };
-
+    
     fetch(`/api/profile/${user_id}`, options)
     .then(response => response.json())
     .then(data => setFavorites(data))
